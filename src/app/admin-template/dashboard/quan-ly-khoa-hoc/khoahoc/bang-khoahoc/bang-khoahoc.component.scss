@@ -1,0 +1,47 @@
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  background-color: #fb3;
+}
+
+td {
+  vertical-align: middle;
+  padding: 52px 14px 52px 0px;
+}
+
+@media (max-width: 768.5px) {
+  td {
+    padding: 30px 14px 30px 0px;
+  }
+
+  .mat-flat-button.mat-accent,
+  .mat-raised-button.mat-accent,
+  .mat-fab.mat-accent,
+  .mat-mini-fab.mat-accent {
+    font-size: 12px;
+    line-height: 30px;
+  }
+
+  .delete {
+    font-size: 12px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 576.24px) {
+  td {
+    padding: 22px 14px 22px 0px;
+  }
+
+  .mat-flat-button.mat-accent,
+  .mat-raised-button.mat-accent,
+  .mat-fab.mat-accent,
+  .mat-mini-fab.mat-accent {
+    font-size: 11px;
+  }
+
+  .delete {
+    font-size: 11px;
+  }
+}

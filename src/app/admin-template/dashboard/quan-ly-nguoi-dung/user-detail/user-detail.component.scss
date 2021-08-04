@@ -1,0 +1,305 @@
+::ng-deep.mat-ripple:not(:empty) {
+  transform: translateZ(0);
+  flex: 1;
+}
+
+.active {
+  background-color: white !important;
+  color: #3f51b5c2 !important;
+}
+
+::ng-deep.mat-tab-header-pagination-controls-enabled
+  .mat-tab-header-pagination {
+  display: none;
+}
+
+::ng-deep.ngx-pagination.ng-star-inserted {
+  margin-top: 30px;
+}
+p {
+  margin: 0;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0;
+  padding: 15px 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: #29303b;
+  display: block;
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+}
+
+.goback {
+  background-color: #17a2b8 !important;
+}
+
+.table_box {
+  width: 100%;
+  .table-striped {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+      0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    width: 98%;
+    margin: auto;
+
+    thead {
+      th {
+        cursor: pointer;
+        margin-right: 15px;
+        margin-left: 15px;
+        font-size: 14.5px;
+
+        &:hover {
+          .hover_span {
+            opacity: 1;
+            transition: 0.75s;
+          }
+        }
+
+        span {
+          visibility: hidden;
+          display: none;
+        }
+
+        &.active {
+          color: #000;
+
+          span {
+            visibility: visible;
+            display: initial;
+          }
+          .hover_span {
+            display: none;
+          }
+        }
+
+        .hover_span {
+          visibility: visible;
+          display: initial;
+          opacity: 0;
+          // transition: 0.75s;
+        }
+      }
+    }
+    tbody {
+      td {
+        vertical-align: middle;
+      }
+      .account {
+        p {
+          width: 123px;
+        }
+      }
+      .name {
+        p {
+          width: 268px;
+        }
+      }
+
+      .control {
+        .letdothis {
+          width: 187px;
+          margin: auto;
+          .accept {
+            font-size: 12px;
+            background-color: #28a745;
+            padding: 0 8px;
+          }
+
+          .refuse {
+            font-size: 12px;
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table_box_2 {
+  width: 100%;
+  .table-striped {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+      0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    width: 98%;
+    margin: auto;
+    thead {
+      th {
+        cursor: pointer;
+        margin-right: 15px;
+        margin-left: 15px;
+        font-size: 14.5px;
+
+        &:hover {
+          .hover_span {
+            opacity: 1;
+            transition: 0.75s;
+          }
+        }
+
+        span {
+          visibility: hidden;
+          display: none;
+        }
+
+        &.active {
+          color: #000;
+
+          span {
+            visibility: visible;
+            display: initial;
+          }
+          .hover_span {
+            display: none;
+          }
+        }
+
+        .hover_span {
+          visibility: visible;
+          display: initial;
+          opacity: 0;
+          // transition: 0.75s;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        .account {
+          p {
+            width: 180px;
+          }
+        }
+
+        .name {
+          p {
+            width: 333px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768.5px) {
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .table_box {
+    .table-striped {
+      thead {
+        th {
+          font-size: 12.5px;
+        }
+      }
+      tbody {
+        td {
+          font-size: 11px;
+        }
+
+        .control {
+          .letdothis {
+            width: 148px;
+            .accept {
+              font-size: 10px;
+              padding: 0 4px;
+              line-height: 30px;
+            }
+
+            .refuse {
+              font-size: 10px;
+              padding: 0 4px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .table td,
+  .table th {
+    padding: 7px;
+  }
+
+  .table_box_2 {
+    .table-striped {
+      thead {
+        th {
+          font-size: 12.5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576.5px) {
+  h1 {
+    font-size: 27px;
+  }
+  .table_box {
+    .table-striped {
+      thead {
+        th {
+          font-size: 11.5px;
+          padding: 7px 6px;
+        }
+      }
+      tbody {
+        td {
+          font-size: 11px;
+        }
+
+        .control {
+          .letdothis {
+            width: 148px;
+            .accept {
+              font-size: 10px;
+              padding: 0 4px;
+              line-height: 30px;
+            }
+
+            .refuse {
+              font-size: 10px;
+              padding: 0 4px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .table td,
+  .table th {
+    padding: 7px 6px;
+  }
+  .table_box2 {
+    .table-striped {
+      thead {
+        th {
+          font-size: 11.5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480.5px) {
+  ::ng-deep.mat-ripple:not(:empty) {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 375.5px) {
+  ::ng-deep.mat-ripple:not(:empty) {
+    font-size: 10px;
+    padding: 0;
+  }
+}

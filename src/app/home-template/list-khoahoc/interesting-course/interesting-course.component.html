@@ -1,0 +1,77 @@
+<div class="card">
+  <div class="image_link">
+    <img class="card-img-top" [src]="khoaHoc.hinhAnh" alt="" />
+  </div>
+
+  <div class="card_info row">
+    <div class="teacher">
+      <img src="../assets/images/icon-course/teacher-icon.jpg" alt="" />
+      <p>{{ khoaHoc.nguoiTao.hoTen }}</p>
+    </div>
+    <div class="student">
+      <div class="row">
+        <img src="../assets/images/icon-course/student-icon.png" alt="" />
+        <p>Học viên</p>
+      </div>
+      <p>{{ khoaHoc.soLuongHocVien }}</p>
+    </div>
+    <div class="views">
+      <div class="row">
+        <img src="../assets/images/icon-course/viewer-icon.jpg" alt="" />
+        <p>Lượt xem</p>
+      </div>
+      <p>{{ khoaHoc.luotXem }}</p>
+    </div>
+  </div>
+
+  <div class="course_info">
+    <div class="hover_div">
+      <p>Ngày khởi tạo: {{ khoaHoc.ngayTao }}</p>
+      <h3>{{ khoaHoc.tenKhoaHoc }}</h3>
+      <h6>{{ khoaHoc.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</h6>
+
+      <div class="teacher row">
+        <img src="../assets/images/icon-course/teacher-icon.jpg" alt="" />
+        <div class="info_teacher_2">
+          <p>Giảng viên</p>
+          <p>{{ khoaHoc.nguoiTao.hoTen }}</p>
+        </div>
+      </div>
+
+      <p></p>
+
+      <div class="icon_course row">
+        <div class="students row">
+          <img src="../assets/images/icon-course/student-icon1.png" alt="" />
+          <p>{{ khoaHoc.soLuongHocVien }}</p>
+        </div>
+        <div class="views row">
+          <img src="../assets/images/icon-course/watch.png" alt="" />
+          <p>{{ khoaHoc.luotXem }}</p>
+        </div>
+      </div>
+
+      <div class="button_here row">
+        <div class="button_detail">
+          <button mat-raised-button color="primary" class="detail">
+            <a
+              routerLink="/detail/{{ khoaHoc.maKhoaHoc }}"
+              [queryParams]="{ tenKhoaHoc: khoaHoc.tenKhoaHoc }"
+            >
+              Chi tiết
+            </a>
+          </button>
+        </div>
+        <div class="button_cart" *ngIf="buttonGone" (click)="buttonInter()">
+          <button mat-raised-button class="add_cart">Thêm vào giỏ</button>
+        </div>
+
+        <div class="button_tocart" *ngIf="buttonShow">
+          <button mat-raised-button class="add_cart" routerLink="/cart">
+            Tới giỏ hàng
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

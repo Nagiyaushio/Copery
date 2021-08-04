@@ -1,0 +1,130 @@
+<h1>Khóa học</h1>
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/admin/dashboard/courses/add"
+  class="mb-2"
+>
+  Thêm khóa học
+</button>
+<div class="search_box">
+  <mat-form-field appearance="legacy">
+    <mat-label>Tìm kiếm</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchText"
+      placeholder="Có thể tìm theo tên, danh mục,..."
+    />
+  </mat-form-field>
+</div>
+<div class="table_box">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="text-align: center">STT</th>
+        <th
+          class="mdl-data-table__cell--non-numeric"
+          [class.active]="order === 'tenKhoaHoc'"
+          (click)="setOrder('tenKhoaHoc')"
+        >
+          TÊN KHÓA HỌC
+
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th style="width: 24%"></th>
+
+        <th
+          [class.active]="order === 'nguoiTao.hoTen'"
+          (click)="setOrder('nguoiTao.hoTen')"
+        >
+          NGƯỜI TẠO <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th
+          [class.active]="order === 'soLuongHocVien'"
+          (click)="setOrder('soLuongHocVien')"
+        >
+          SỐ LƯỢNG HV <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th [class.active]="order === 'ngayTao'" (click)="setOrder('ngayTao')">
+          NGÀY TẠO
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let khoahoc of dskh
+            | filter: searchText
+            | paginate: { itemsPerPage: 5, currentPage: p }
+            | orderBy: order:reverse;
+          index as i
+        "
+        class="this_is"
+      >
+        <td style="text-align: center" class="lines">
+          <p>
+            {{ i + 1 }}
+          </p>
+        </td>
+
+        <td class="course_image">
+          <img [src]="khoahoc.hinhAnh" alt="" />
+        </td>
+
+        <td class="course_info">
+          <p class="course_name">{{ khoahoc.tenKhoaHoc }}</p>
+          <p class="course_category">
+            {{ khoahoc.danhMucKhoaHoc.tenDanhMucKhoaHoc }}
+          </p>
+          <button
+            mat-raised-button
+            routerLink="/admin/dashboard/courses/{{ khoahoc.maKhoaHoc }}"
+          >
+            Chi tiết
+          </button>
+        </td>
+
+        <td class="teachers">
+          <div class="center_div">
+            <p class="teacher">{{ khoahoc.nguoiTao.hoTen }}</p>
+            <p class="role">{{ khoahoc.nguoiTao.tenLoaiNguoiDung }}</p>
+          </div>
+        </td>
+
+        <td style="text-align: center" class="students">
+          <p>
+            {{ khoahoc.soLuongHocVien }}
+          </p>
+        </td>
+
+        <td class="date">
+          <p>
+            {{ khoahoc.ngayTao }}
+          </p>
+        </td>
+
+        <app-bang-khoahoc [khoaHoc]="khoahoc"></app-bang-khoahoc>
+      </tr>
+      <!-- </div> -->
+    </tbody>
+  </table>
+  <pagination-controls
+    (pageChange)="p = $event"
+    previousLabel="Trước"
+    nextLabel="Sau"
+  ></pagination-controls>
+</div>

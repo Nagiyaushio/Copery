@@ -1,0 +1,91 @@
+<div class="container">
+  <form
+    class="signup_form"
+    #authForm="ngForm"
+    (ngSubmit)="login(authForm.value)"
+  >
+    <div class="row">
+      <h3>Đăng nhập</h3>
+      <p class="signin_text">
+        <a class="signin" routerLink="/register">Đăng ký</a>
+        tài khoản?
+      </p>
+    </div>
+
+    <div class="form-padding">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Tài khoản</mat-label>
+          <input
+            matInput
+            placeholder="Ex: gacon123"
+            name="taiKhoan"
+            #TaiKhoan="ngModel"
+            minlength="7"
+            maxlength="15"
+            pattern="^[a-zA-Z0-9]*$"
+            ngModel
+            required
+            value="Sushi"
+          />
+          <mat-error
+            *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+          >
+            <mat-hint *ngIf="TaiKhoan.errors.required">Nhập tài khoản</mat-hint>
+            <mat-hint
+              *ngIf="TaiKhoan.errors.minlength || TaiKhoan.errors.pattern"
+            >
+              Tài khoản trên 7 ký tự, không có ký tự đặc biệt và được viết liền
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Mật khẩu</mat-label>
+          <input
+            matInput
+            placeholder="Ex: gaconxyz@123"
+            name="matKhau"
+            #MatKhau="ngModel"
+            minlength="7"
+            maxlength="15"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            ngModel
+            required
+          />
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)"
+          >
+            <mat-hint *ngIf="MatKhau.errors.required">Nhập mật khẩu</mat-hint>
+            <mat-hint *ngIf="MatKhau.errors.minlength">
+              Mật khẩu phải trên 7 ký tự
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <button
+      mat-stroked-button
+      color="primary"
+      type="submit"
+      class="button_login"
+      [disabled]="!authForm.valid"
+      click="onClick()"
+    >
+      Đăng nhập
+    </button>
+  </form>
+</div>

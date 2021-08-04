@@ -1,0 +1,163 @@
+<div class="container">
+  <form
+    #registerForm="ngForm"
+    (ngSubmit)="register(registerForm.value)"
+    class="signup_form"
+  >
+    <div class="row">
+      <h3>Đăng ký</h3>
+      <p class="signin_text">
+        <a class="signin" routerLink="/type">Đăng nhập</a>
+        tài khoản?
+      </p>
+    </div>
+
+    <div class="form-padding">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Tài khoản</mat-label>
+          <input
+            matInput
+            placeholder="Ex: gacon123"
+            name="taiKhoan"
+            #TaiKhoan="ngModel"
+            minlength="7"
+            maxlength="15"
+            pattern="^[a-zA-Z0-9]*$"
+            ngModel
+            required
+          />
+          <mat-error
+            *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+          >
+            <mat-hint *ngIf="TaiKhoan.errors.required">Nhập tài khoản</mat-hint>
+            <mat-hint
+              *ngIf="TaiKhoan.errors.minlength || TaiKhoan.errors.pattern"
+            >
+              Tài khoản trên 7 ký tự, không có ký tự đặc biệt và được viết liền
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Mật khẩu</mat-label>
+          <input
+            matInput
+            placeholder="Ex: gaconxyz@123"
+            name="matKhau"
+            #MatKhau="ngModel"
+            minlength="7"
+            maxlength="15"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            ngModel
+            required
+          />
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)"
+          >
+            <mat-hint *ngIf="MatKhau.errors.required">Nhập mật khẩu</mat-hint>
+            <mat-hint *ngIf="MatKhau.errors.minlength">
+              Mật khẩu phải trên 7 ký tự
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- thêm -->
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Họ tên</mat-label>
+          <input
+            matInput
+            placeholder="Ex: Gà Con"
+            name="hoTen"
+            #HoTen="ngModel"
+            minlength="4"
+            matInput
+            [pattern]="
+              '^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ' +
+              'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
+              'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
+            "
+            ngModel
+            required
+          />
+          <mat-error *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)">
+            <mat-hint *ngIf="HoTen.errors.required">Nhập họ tên</mat-hint>
+            <mat-hint *ngIf="HoTen.errors.minlength || HoTen.errors.pattern">
+              Họ tên trên 4 ký tự và không có ký tự đặc biệt
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Ex: gacon123@yahoo.com"
+            name="email"
+            #Email="ngModel"
+            matInput
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            ngModel
+            required
+          />
+          <mat-error *ngIf="Email.errors && (Email.dirty || Email.touched)">
+            <mat-hint *ngIf="Email.errors.required">Nhập Email</mat-hint>
+            <mat-hint *ngIf="Email.errors.pattern">
+              Email phải được viết liền và không có ký tự đặc biệt
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Số điện thoại</mat-label>
+          <input
+            matInput
+            placeholder="Ex: 0123456789"
+            name="soDT"
+            #SoDT="ngModel"
+            matInput
+            pattern="^[0-9]*$"
+            ngModel
+            required
+            maxlength="10"
+            minlength="10"
+          />
+          <mat-error *ngIf="SoDT.errors && (SoDT.dirty || SoDT.touched)">
+            <mat-hint *ngIf="SoDT.errors.required">Nhập số điện thoại</mat-hint>
+            <mat-hint *ngIf="SoDT.errors.pattern || SoDT.errors.minlength">
+              Số điện thoại phải đủ 10 số và không điền chữ
+            </mat-hint>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!registerForm.valid"
+      mat-raised-button
+      color="primary"
+    >
+      Đăng ký
+    </button>
+  </form>
+</div>

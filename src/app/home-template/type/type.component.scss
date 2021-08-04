@@ -1,0 +1,113 @@
+.container {
+  padding: 70px 15px;
+
+  position: relative;
+  text-align: center;
+  align-items: center;
+
+  margin: 0px auto;
+
+  height: 100%;
+
+  .form_type {
+    background-color: #ebebebcd;
+    margin: 0px auto;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border-radius: 3px;
+    width: 65%;
+    padding-bottom: 40px;
+    padding-top: 15px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: #29303b;
+      display: block;
+      font-weight: 700;
+      font-size: 24px;
+      padding: 17px 0;
+    }
+    .row {
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+
+      width: 100%;
+      margin: 0;
+
+      .col.borders {
+        border-right: 1px solid #b0b2b3;
+      }
+
+      .col {
+        // border-radius: 24px;
+        transition: 0.5s;
+        width: 100%;
+        padding-top: 25px;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.09);
+          transition: 0.5s;
+
+          img {
+            transform: scale(1.25);
+            transition: 0.5s;
+          }
+        }
+        a {
+          text-decoration: none;
+        }
+
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 77%;
+
+          padding: 15px;
+          transition: 0.5s;
+        }
+
+        p {
+          margin: 15px 0;
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+          color: #29303b;
+          font-weight: 700;
+          font-size: 27px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992.23px) {
+  .container {
+    .form_type {
+      width: 88%;
+    }
+  }
+}
+
+@media (max-width: 768.23px) {
+  .container {
+    // height: 89%;
+    .form_type {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576.23px) {
+  .container {
+    .form_type {
+      width: 87%;
+    }
+  }
+}

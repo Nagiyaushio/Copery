@@ -1,0 +1,133 @@
+<body class="body">
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Bảng điều khiển</div>
+      <div class="list-group list-group-flush">
+        <ul>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/admin/dashboard/administrator"
+              routerLinkActive="admin_active"
+              >Thông tin tài khoản</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/admin/dashboard/courses"
+              routerLinkActive="admin_active"
+              >Quản lý khóa học</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/admin/dashboard/users"
+              routerLinkActive="admin_active"
+              >Quản lý người dùng</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn" id="sidebarToggle" (click)="addClass()">
+            <img
+              src="../assets/images/bigsmalld.png"
+              alt=""
+              class="image_items changes"
+            />
+          </button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            [attr.aria-expanded]="showOrNot"
+            aria-label="Toggle navigation"
+            (click)="showDiv()"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="showdiv collapse navbar-collapse"
+            id="navbarSupportedContent"
+          >
+            <div class="status_in">
+              <a routerLink="/admin/dashboard/administrator">
+                <img src="../assets/images/admin.png" alt="" class="dropdown" />
+              </a>
+
+              <div class="dropdown-content">
+                <a routerLink="/admin/dashboard/administrator">
+                  <div class="row">
+                    <div class="first_content">
+                      <img
+                        src="../assets/images/admin.png"
+                        alt=""
+                        class="user_photo"
+                      />
+                    </div>
+                    <div class="second_content">
+                      <div class="center_p">
+                        <p>{{ adminInfo.taiKhoan }}</p>
+                        <p>{{ adminInfo.email }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <div class="account_setting">
+                  <a routerLink="/">Trang chủ</a>
+                </div>
+                <div class="log_out" (click)="logOut()">
+                  <a routerLink="/admin/dashboard/administrator">Đăng xuất</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="status_in_responsive">
+              <div class="dropdown-content">
+                <a routerLink="/admin/dashboard/administrator">
+                  <div class="row">
+                    <div class="first_content">
+                      <img
+                        src="../assets/images/admin.png"
+                        alt=""
+                        class="user_photo"
+                      />
+                    </div>
+                    <div class="second_content">
+                      <div class="center_p">
+                        <p>{{ adminInfo.taiKhoan }}</p>
+                        <p>{{ adminInfo.email }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <div class="account_setting">
+                  <a routerLink="/">TRANG CHỦ</a>
+                </div>
+                <div class="log_out" (click)="logOut()">
+                  <a routerLink="/admin/dashboard/administrator">ĐĂNG XUẤT</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</body>

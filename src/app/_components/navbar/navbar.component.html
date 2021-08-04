@@ -1,0 +1,262 @@
+<nav class="navbar navbar-expand-md" [class.nav_change]="nav_value">
+  <!-- Brand -->
+
+  <!-- Toggler/collapsibe Button -->
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapsibleNavbar"
+    (click)="clickTag()"
+  >
+    <span class="navbar-toggler-icon">
+      <img src="../assets/images/bigsmalld.png" alt="" />
+    </span>
+  </button>
+
+  <a class="navbar-brand" routerLink="/"
+    ><img src="../assets/images/logo.png" alt=""
+  /></a>
+
+  <div class="cart_item_responsive">
+    <span [matBadge]="matBadge" matBadgeOverlap="false"></span>
+    <a routerLink="/cart">
+      <img src="../assets/images/cart.png" alt="" />
+    </a>
+  </div>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <div class="content_dropdown row" *ngIf="begoneDiv">
+      <div class="status_in_responsive" *ngIf="isLogin">
+        <div class="dropdown-content">
+          <a>
+            <div class="row">
+              <div class="first_content">
+                <img
+                  src="../assets/images/user.png"
+                  alt=""
+                  class="user_photo"
+                />
+              </div>
+              <div class="second_content">
+                <div class="center_p">
+                  <p>{{ userName.taiKhoan }}</p>
+                  <p>{{ userName.email }}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <div class="account_setting">
+            <a routerLink="/user">THÔNG TIN TÀI KHOẢN</a>
+          </div>
+          <div class="log_out" (click)="logOut()">
+            <p>ĐĂNG XUẤT</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="status_in_admin_responsive" *ngIf="isLoginAdmin">
+        <div class="dropdown-content">
+          <a>
+            <div class="row">
+              <div class="first_content">
+                <img
+                  src="../assets/images/admin.png"
+                  alt=""
+                  class="user_photo"
+                />
+              </div>
+              <div class="second_content">
+                <div class="center_p">
+                  <p>{{ adminName.taiKhoan }}</p>
+                  <p>{{ adminName.email }}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <div class="account_setting">
+            <a routerLink="/admin/dashboard/administrator"
+              >THÔNG TIN TÀI KHOẢN</a
+            >
+          </div>
+          <div class="log_out" (click)="logOut()">
+            <p>ĐĂNG XUẤT</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active_navbar"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >TRANG CHỦ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/list-khoahoc"
+              routerLinkActive="active_navbar"
+              >KHÓA HỌC</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/about"
+              routerLinkActive="active_navbar"
+              >VỀ MÌNH</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="cart_item">
+        <span [matBadge]="matBadge" matBadgeOverlap="false"></span>
+        <a routerLink="/cart">
+          <img src="../assets/images/cart.png" alt="" />
+        </a>
+
+        <div class="dropdown_cart">
+          <h1>TỔNG CỘNG: {{ matBadge }}</h1>
+
+          <div class="overflown_div">
+            <div class="items row" *ngFor="let item of dsKHThemVaoGio">
+              <div class="course_img">
+                <img [src]="item.hinhAnh" alt="" />
+              </div>
+
+              <div class="course_content">
+                <h4>{{ item.tenKhoaHoc }}</h4>
+                <p>{{ item.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</p>
+                <div class="teacher row">
+                  <img src="../assets/images/cart/teacher-icon.jpg" alt="" />
+                  <p>{{ item.nguoiTao.hoTen }}</p>
+                </div>
+              </div>
+
+              <!-- <img
+                src="../assets/images/cart/x-icon.png"
+                alt=""
+                class="img_delete"
+                (click)="courseDelete(item)"
+              /> -->
+            </div>
+          </div>
+
+          <div class="button_go">
+            <button mat-raised-button color="primary" routerLink="/cart">
+              Tới giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sign-up-in">
+        <div class="status_in" *ngIf="isLogin">
+          <a>
+            <img src="../assets/images/user.png" alt="" class="dropdown" />
+          </a>
+
+          <div class="dropdown-content">
+            <a routerLink="/user">
+              <div class="row">
+                <div class="first_content">
+                  <img
+                    src="../assets/images/user.png"
+                    alt=""
+                    class="user_photo"
+                  />
+                </div>
+                <div class="second_content">
+                  <div class="center_p">
+                    <p>{{ userName.taiKhoan }}</p>
+                    <p>{{ userName.email }}</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <div class="account_setting">
+              <a routerLink="/user">Thông tin tài khoản</a>
+            </div>
+            <div class="log_out" (click)="logOut()">
+              <p>Đăng xuất</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status_in_admin" *ngIf="isLoginAdmin">
+          <a>
+            <img src="../assets/images/admin.png" alt="" class="dropdown" />
+          </a>
+
+          <div class="dropdown-content">
+            <a routerLink="/admin/dashboard/administrator">
+              <div class="row">
+                <div class="first_content">
+                  <img
+                    src="../assets/images/admin.png"
+                    alt=""
+                    class="user_photo"
+                  />
+                </div>
+                <div class="second_content">
+                  <div class="center_p">
+                    <p>{{ adminName.taiKhoan }}</p>
+                    <p>{{ adminName.email }}</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <div class="account_setting">
+              <a routerLink="/admin/dashboard/administrator"
+                >Thông tin tài khoản</a
+              >
+            </div>
+            <div class="log_out" (click)="logOut()">
+              <p>Đăng xuất</p>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div *ngIf="isOut" class="isOut">
+          <div class="center_button">
+            <button
+              mat-stroked-button
+              color="primary"
+              class="mr-2"
+              routerLink="/type"
+              (click)="signIn()"
+            >
+              Đăng nhập
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              routerLink="/register"
+              class="margin_114px"
+            >
+              Đăng ký
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spinner" *ngIf="height305px">
+      <div class="height_305px">
+        <mat-spinner></mat-spinner>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,666 @@
+// ::ng-deep.active {
+//   background-color: #3f51b5c2 !important;
+//   color: white !important;
+// }
+
+.card {
+  position: relative;
+  height: 250px;
+  border: unset;
+  overflow: hidden;
+  transition: 0.25s;
+  .image_link {
+    overflow: hidden;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 70%);
+    border-radius: 5px;
+
+    img {
+      height: 167px;
+      border: 1px solid #cfd0d1;
+      box-shadow: 0 2px 4px 0 rgb(0 0 0 / 70%);
+    }
+  }
+
+  &:hover {
+    .card_info.row {
+      transform: translateY(270%);
+      transition: 0.25s;
+      opacity: 0;
+    }
+
+    .course_info {
+      transform: translateX(0);
+      transition: 0.5s;
+      opacity: 1;
+    }
+  }
+
+  .card_info.row {
+    position: absolute;
+    right: 2%;
+    width: 96%;
+    height: 97px;
+
+    background-color: white;
+
+    transform: translateY(145%);
+    box-shadow: 0px 2px 4px 0 rgb(0 0 0 / 70%);
+    margin: 0;
+    padding: 0px 5px;
+    border-radius: 5px;
+    transition: 0.25s;
+    opacity: 1;
+    .teacher {
+      width: 20%;
+      margin: auto;
+
+      img {
+        width: 89%;
+        padding-top: 6px;
+        margin: auto;
+      }
+
+      p {
+        width: 100%;
+        font-size: 10px;
+        text-align: center;
+
+        margin: 0;
+      }
+    }
+
+    .student {
+      width: 40%;
+      margin: auto;
+      padding: 5px 2px;
+      padding-top: 6px;
+
+      .row {
+        width: 100%;
+        margin: 0;
+        img {
+          width: 20px;
+          height: 25px;
+          padding-bottom: 3px;
+        }
+
+        p {
+          width: 70%;
+          font-size: 12px;
+          text-align: center;
+          padding-top: 4px;
+          margin: 0;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        text-align: center;
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+
+    .views {
+      width: 40%;
+      padding: 5px 2px;
+      padding-top: 10px;
+      margin: auto;
+
+      .row {
+        width: 100%;
+        margin: 0;
+        img {
+          width: 20px;
+          height: 13px;
+          margin-top: 3px;
+        }
+
+        p {
+          width: 73%;
+          font-size: 12px;
+          text-align: center;
+          margin: 0;
+          font-weight: 500;
+        }
+      }
+      p {
+        text-align: center;
+        margin: 0;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .course_info {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    transform: translateX(102%);
+    opacity: 0;
+    transition: 0.5s;
+
+    .hover_div {
+      background-color: rgb(0 0 0 / 74%);
+      padding: 9px 8px;
+      height: 96%;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px 0 rgb(0 0 0 / 70%);
+      p {
+        margin: 0;
+        font-size: 10px;
+        color: #e4e1e1b3;
+      }
+
+      h3 {
+        font-size: 15px;
+        margin: 0;
+        color: rgb(228, 225, 225);
+      }
+
+      h6 {
+        font-size: 11px;
+        margin: 0;
+        color: #e4e1e19c;
+      }
+
+      .teacher.row {
+        margin: 0;
+        padding: 10px 0;
+        img {
+          height: 40px;
+          width: 50px;
+          flex: 1;
+        }
+
+        .info_teacher_2 {
+          flex: 7;
+          padding: 0 10px;
+
+          p:first-child {
+            font-weight: 300;
+          }
+          p:last-child {
+            color: white;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .icon_course.row {
+      margin: 0;
+      .views.row {
+        flex: 1;
+        img {
+          flex: 1;
+          height: 50px;
+          width: 50px;
+          margin: auto;
+        }
+
+        p {
+          flex: 1;
+          text-align: left;
+          margin: auto;
+        }
+      }
+
+      .students.row {
+        flex: 1;
+        margin: 0;
+        img {
+          height: 50px;
+          width: 50px;
+          margin: auto;
+          flex: 1;
+        }
+
+        p {
+          flex: 1;
+          text-align: left;
+          margin: auto;
+        }
+      }
+    }
+
+    .button_here.row {
+      margin: 0;
+      padding: 10px 0;
+
+      .button_detail {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .detail {
+          background-color: #3f90b5;
+          font-size: 11px;
+          padding: 0 8px;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+
+      .button_cart {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .add_cart {
+          background-color: #28a745;
+          color: white;
+          font-size: 11px;
+          padding: 0 8px;
+        }
+      }
+
+      .button_tocart {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .add_cart {
+          padding: 0 8px;
+          font-size: 11px;
+          background-color: #3f51b5;
+          color: white;
+        }
+      }
+
+      .button_togodetail {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .but_detail {
+          padding: 0 8px;
+          font-size: 11px;
+          background-color: #b0b8b2;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200.52px) {
+  .card {
+    height: 250px;
+
+    .card_info.row {
+      height: 90px;
+      .teacher {
+        p {
+          font-size: 8px;
+        }
+      }
+
+      .student {
+        padding: 1px;
+        .row {
+          img {
+            width: 15px;
+            height: 23px;
+          }
+
+          p {
+            font-size: 11px;
+          }
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .views {
+        padding: 1px;
+        padding-top: 5px;
+        .row {
+          img {
+            width: 13px;
+            height: 10px;
+          }
+
+          p {
+            font-size: 11px;
+          }
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992.5px) {
+  .card {
+    height: 263px;
+    .card_info.row {
+      height: 85px;
+      .teacher {
+        p {
+          font-size: 9.5px;
+        }
+      }
+
+      .student {
+        .row {
+          img {
+            width: 11px;
+            height: 18px;
+          }
+
+          p {
+            font-size: 11px;
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .views {
+        .row {
+          img {
+            margin-top: 3px;
+            width: 10px;
+            height: 8px;
+          }
+          p {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+
+    .course_info {
+      .hover_div {
+        height: 86%;
+        p {
+          font-size: 9px;
+        }
+        h3 {
+          font-size: 14px;
+        }
+        h6 {
+          font-size: 10px;
+        }
+      }
+
+      .button_here.row {
+        .button_detail {
+          .detail {
+            font-size: 11px;
+            line-height: 31px;
+            padding: 0 10px;
+          }
+        }
+
+        .button_cart {
+          .add_cart {
+            font-size: 11px;
+            line-height: 31px;
+            padding: 0 10px;
+          }
+        }
+
+        .button_tocart {
+          .add_cart {
+            font-size: 11px;
+            line-height: 31px;
+            padding: 0 10px;
+          }
+        }
+
+        .button_togodetail {
+          .but_detail {
+            font-size: 11px;
+            line-height: 31px;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768.52px) {
+  .card {
+    height: 240px;
+    .card_info.row {
+      height: 83px;
+      .teacher {
+        p {
+          font-size: 9px;
+        }
+      }
+
+      .student {
+        .row {
+          img {
+            width: 11px;
+            height: 18px;
+          }
+
+          p {
+            font-size: 11px;
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .views {
+        padding-top: 3px;
+        p {
+          margin: 0;
+        }
+        .row {
+          img {
+            margin-top: 3px;
+            width: 10px;
+            height: 8px;
+          }
+          p {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+
+    .course_info {
+      .hover_div {
+        height: 91%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576.52px) {
+  .card {
+    height: 258px;
+    .card_info.row {
+      height: 100px;
+      .teacher {
+        p {
+          font-size: 11px;
+        }
+      }
+
+      .student {
+        .row {
+          img {
+            width: 14px;
+            height: 21px;
+          }
+
+          p {
+            font-size: 14px;
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .views {
+        padding-top: 3px;
+        .row {
+          img {
+            margin-top: 3px;
+            width: 14px;
+            height: 10px;
+          }
+          p {
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380.52px) {
+  .card {
+    height: 257px;
+    .card_info.row {
+      height: 92px;
+      .teacher {
+        p {
+          font-size: 9px;
+        }
+      }
+
+      .student {
+        p {
+          font-size: 12px;
+        }
+        .row {
+          img {
+            width: 10px;
+            height: 18px;
+          }
+
+          p {
+            font-size: 11px;
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .views {
+        p {
+          font-size: 12px;
+        }
+        .row {
+          img {
+            margin-top: 3px;
+            width: 9px;
+            height: 8px;
+          }
+          p {
+            font-size: 11px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320.52px) {
+  .card {
+    height: 227px;
+    .card_info.row {
+      height: 81px;
+
+      .teacher {
+        p {
+          font-size: 8px;
+        }
+      }
+
+      .student {
+        p {
+          font-size: 11px;
+        }
+        .row {
+          img {
+            width: 10px;
+            height: 18px;
+          }
+
+          p {
+            font-size: 10px;
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .views {
+        p {
+          font-size: 11px;
+        }
+
+        .row {
+          img {
+            margin-top: 3px;
+            width: 9px;
+            height: 8px;
+          }
+          p {
+            font-size: 10px;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .course_info {
+      .hover_div {
+        height: 100%;
+      }
+
+      .button_here.row {
+        .button_detail {
+          .detail {
+            font-size: 10px;
+            line-height: 28px;
+            padding: 0 6px;
+          }
+        }
+
+        .button_cart {
+          .add_cart {
+            font-size: 10px;
+            line-height: 28px;
+            padding: 0 6px;
+          }
+        }
+
+        .button_tocart {
+          .add_cart {
+            font-size: 10px;
+            line-height: 28px;
+            padding: 0 6px;
+          }
+        }
+
+        .button_togodetail {
+          .but_detail {
+            font-size: 10px;
+            line-height: 28px;
+            padding: 0 6px;
+          }
+        }
+      }
+    }
+  }
+}

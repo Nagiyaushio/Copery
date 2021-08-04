@@ -1,0 +1,199 @@
+<div *ngIf="khoaHoc">
+  <h1>Ghi danh người dùng theo khóa học</h1>
+
+  <p class="name_course">
+    Tên khóa học: <strong>{{ khoaHoc.tenKhoaHoc }}</strong>
+  </p>
+
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="/admin/dashboard/courses/list"
+    class="goback"
+  >
+    Quay lại danh sách
+  </button>
+
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="HỌC VIÊN CHỜ GHI DANH">
+      <div class="table_box">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="text-align: center">STT</th>
+              <th
+                class="mdl-data-table__cell--non-numeric"
+                [class.active]="order === 'taiKhoan'"
+                (click)="setOrder('taiKhoan')"
+              >
+                TÀI KHOẢN
+
+                <span [hidden]="reverse">▼</span>
+                <span [hidden]="!reverse">▲</span>
+                <span class="hover_span">▲</span>
+              </th>
+
+              <th
+                [class.active]="order === 'hoTen'"
+                (click)="setOrder('hoTen')"
+              >
+                HỌ TÊN <span [hidden]="reverse">▼</span>
+                <span [hidden]="!reverse">▲</span>
+                <span class="hover_span">▲</span>
+              </th>
+
+              <th
+                [class.active]="order === 'biDanh'"
+                (click)="setOrder('biDanh')"
+              >
+                BÍ DANH<span [hidden]="reverse">▼</span>
+                <span [hidden]="!reverse">▲</span>
+                <span class="hover_span">▲</span>
+              </th>
+
+              <th style="text-align: center"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let nguoiDung of danhSachHocVienChoXetDuyet
+                  | paginate: { itemsPerPage: 5, currentPage: p }
+                  | orderBy: order:reverse;
+                index as i
+              "
+              class="this_is"
+            >
+              <td style="text-align: center" class="lines">
+                <p>
+                  {{ i + 1 }}
+                </p>
+              </td>
+
+              <td class="account">
+                <p>
+                  {{ nguoiDung.taiKhoan }}
+                </p>
+              </td>
+
+              <td class="name">
+                <p>{{ nguoiDung.hoTen }}</p>
+              </td>
+
+              <td class="nickname">
+                <p>
+                  {{ nguoiDung.biDanh }}
+                </p>
+              </td>
+
+              <td class="control">
+                <div class="letdothis">
+                  <button
+                    mat-raised-button
+                    color="accent"
+                    class="mr-2 accept"
+                    (click)="accept(nguoiDung)"
+                  >
+                    Chấp nhận
+                  </button>
+
+                  <button
+                    mat-raised-button
+                    color="warn"
+                    class="refuse"
+                    (click)="refuse(nguoiDung)"
+                  >
+                    <span>Từ chối</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls
+          (pageChange)="p = $event"
+          previousLabel="Trước"
+          nextLabel="Sau"
+        ></pagination-controls>
+      </div>
+    </mat-tab>
+    <mat-tab label="HỌC VIÊN ĐÃ GHI DANH">
+      <div class="table_box2">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="text-align: center">STT</th>
+              <th
+                class="mdl-data-table__cell--non-numeric"
+                [class.active]="order === 'taiKhoan'"
+                (click)="setOrder1('taiKhoan')"
+              >
+                TÀI KHOẢN
+
+                <span [hidden]="reverse">▼</span>
+                <span [hidden]="!reverse">▲</span>
+                <span class="hover_span">▲</span>
+              </th>
+
+              <th
+                [class.active]="order === 'hoTen'"
+                (click)="setOrder1('hoTen')"
+              >
+                HỌ TÊN <span [hidden]="reverse">▼</span>
+                <span [hidden]="!reverse">▲</span>
+                <span class="hover_span">▲</span>
+              </th>
+
+              <th
+                [class.active]="order === 'biDanh'"
+                (click)="setOrder1('biDanh')"
+              >
+                BÍ DANH<span [hidden]="reverse">▼</span>
+                <span [hidden]="!reverse">▲</span>
+                <span class="hover_span">▲</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let nguoiDung of danhSachHocVienDaGhiDanh
+                  | paginate: { itemsPerPage: 5, currentPage: p1 }
+                  | orderBy: order:reverse;
+                index as i
+              "
+              class="this_is"
+            >
+              <td style="text-align: center" class="lines">
+                <p>
+                  {{ i + 1 }}
+                </p>
+              </td>
+
+              <td class="account">
+                <p>
+                  {{ nguoiDung.taiKhoan }}
+                </p>
+              </td>
+
+              <td class="name">
+                <p>{{ nguoiDung.hoTen }}</p>
+              </td>
+
+              <td class="nickname">
+                <p>
+                  {{ nguoiDung.biDanh }}
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls
+          (pageChange)="p1 = $event"
+          previousLabel="Trước"
+          nextLabel="Sau"
+        ></pagination-controls>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

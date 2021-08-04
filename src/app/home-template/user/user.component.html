@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="first_item">
+      <div class="margin_box">
+        <div class="user_image">
+          <img src="../assets/images/user.png" alt="" />
+          <h3>{{ userName.taiKhoan }}</h3>
+        </div>
+        <div class="user_content">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/user/profile"
+                routerLinkActive="profile_active"
+                >Thông tin</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/user/courses"
+                routerLinkActive="profile_active"
+                >Khóa học ghi danh</a
+              >
+            </li>
+            <!-- <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/user/my-courses"
+                routerLinkActive="profile_active"
+                >Khóa học của tôi</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="second_item">
+      <div class="margin_box">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

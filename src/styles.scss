@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+
+//scorll- bar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.active {
+  background-color: #3f51b5c2;
+  color: white !important;
+}
+
+.active_category {
+  background-color: black;
+  color: white !important;
+}
+
+.active_navbar {
+  color: #3f51b5 !important;
+}
+
+.box {
+  animation: fade 2s;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.type-background {
+  background-image: url(/../assets/images/office-tyep.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.login-background {
+  background-image: url(/../assets/images/office-login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.register-background {
+  background-image: url(/../assets/images/office-signup.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.login-admin-background {
+  background-image: url(/../assets/images/office-admin-login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.user-profile-background {
+  background-image: url(/../assets/images/user-info.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.pagenotfound {
+  background-image: url(/../assets/images/detail.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+@media (max-width: 410px) {
+  body {
+    // width: 410px;
+  }
+}
+
+@media (max-width: 576.5px) {
+  .login-admin-background {
+    background-position: center center;
+    background-attachment: fixed;
+  }
+}
+
+.profile_active {
+  background-color: #3f51b5c2;
+  color: white !important;
+}
+
+.admin_active {
+  background-color: #3f51b5c2;
+  color: white !important;
+}

@@ -1,0 +1,46 @@
+.container {
+  text-align: center;
+  //thêm cái này thì được
+  align-items: center;
+  height: 100%;
+  position: relative;
+
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .text {
+    color: #c7c9cc;
+    font-size: 124px;
+    font-weight: 400;
+    letter-spacing: -5px;
+    line-height: 178px;
+  }
+
+  .gohome {
+    margin-right: 10px;
+    background-color: #3f90b5;
+    color: white;
+  }
+
+  .previous {
+    background-color: #28a745;
+    color: white;
+  }
+
+  p {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 300.52px) {
+  .container {
+    .text {
+      font-size: 108px;
+    }
+  }
+}

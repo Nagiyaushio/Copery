@@ -1,0 +1,57 @@
+* Buổi 1
+    - Component
+    - Module
+    - DataBinding
+        + OnewayBinding
+            . Text Interpolation
+            . Property binding []
+            . Event binding ()
+
+* Buổi 2
+    - DataBinding
+        + TwowayBinding
+    -Directive
+        + structural directive
+            + ngIf
+            + ngSwitch
+            + ngFor
+        + attribute directive
+            + ngClass
+            + ngStyle
+            + attribute directive (tự định nghĩa)
+
+* Buổi 3:
+    - Interaction
+        + Input
+        + Output
+        + Viewchild
+        + Viewchilren
+
+* Buổi 4:
+    - Routing:
+        + Routing Component
+        + Routing Module
+
+* Buổi 5:
+    - Service call api
+    - Params url:
+        - Một Param
+        - Nhiều Params
+
+* Buổi 6:
+    - Validation Form
+    - Guard
+    - JWT
+
+* Buổi 7:
+    * Pipes
+	* Lifecycle
+    * CanDeactivate: ng g guard name
+	* BehaviorSubject
+	* Refactor Service
+
+* Buổi 8:
+    * Sharing Modules
+    * Angular Material
+    * Alias
+    

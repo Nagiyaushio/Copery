@@ -1,0 +1,405 @@
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  background-color: #218838;
+}
+
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+  color: #218838;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 14px 0 14px 0;
+}
+
+::ng-deep.mat-form-field-infix {
+  border-top: 5px solid transparent;
+}
+
+::ng-deep.mat-form-field-wrapper {
+  padding-bottom: 17px;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 71%;
+  margin-top: 0px;
+  top: calc(100% - 14px);
+}
+
+.mat-form-field {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mat-radio-button {
+  margin: 11px 13px;
+}
+
+//đổi màu border radio
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #218838;
+}
+
+//đổi màu radio
+
+::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #218838;
+}
+
+.container {
+  .box-shadow {
+    border: solid 1px #cfd0d1;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  }
+
+  h3 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    margin: 0;
+    padding: 18px 64px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #29303b;
+    display: block;
+    font-weight: 700;
+    font-size: 25px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+      width: 50%;
+      border-bottom: solid 1px #b9b9ba;
+    }
+  }
+
+  .form-padding.row {
+    padding: 18px 24px;
+    margin: 0;
+
+    .form-group {
+      width: 50%;
+      margin-bottom: 0;
+      padding: 0 10px;
+    }
+
+    .form-group.description {
+      width: 100%;
+
+      mat-form-field {
+        textarea {
+          height: 125px;
+        }
+      }
+    }
+
+    .form-group.image {
+      width: 70%;
+      input {
+        box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%),
+          0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        padding: 14px 11px;
+        border-radius: 4px;
+        width: 100%;
+      }
+    }
+
+    .button_div.row {
+      padding-top: 45px;
+      padding-left: 24px;
+      width: 100%;
+
+      button {
+        // width: 50%;
+        margin: auto;
+        // padding: 0 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 40px 150px;
+  }
+}
+
+.mat-hint {
+  color: #f44336;
+}
+
+@media (max-width: 1200.52px) {
+  .container {
+    padding: 40px 100px;
+  }
+}
+
+@media (max-width: 922.52px) {
+  .container {
+    .form-padding.row {
+      .form-group.image {
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768.52px) {
+  .container {
+    padding: 40px 0px;
+  }
+}
+
+@media (max-width: 576.52px) {
+  .container {
+    padding: 40px 20px;
+
+    .form-padding.row {
+      .form-group {
+        width: 100%;
+        margin-bottom: 0;
+        padding: 0 0px;
+      }
+
+      .form-group.description {
+        width: 100%;
+
+        mat-form-field {
+          textarea {
+            height: 135px;
+          }
+        }
+      }
+
+      .form-group.image {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+
+      .button_div.row {
+        padding-top: 20px;
+        padding-left: 24px;
+        width: 100%;
+
+        button {
+          width: 100%;
+          margin-bottom: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 440.52px) {
+  .container {
+    .form-padding.row {
+      .button_div.row {
+        margin: 0;
+        width: 100%;
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 387.52px) {
+  .container {
+    padding: 40px 0;
+    h3 {
+      font-size: 23px;
+      padding: 18px 22px;
+    }
+
+    .form-group.image {
+      input {
+        width: 100%;
+        font-size: 10px;
+      }
+    }
+  }
+
+  ::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 11px 0 10px 0;
+    font-size: 12px;
+  }
+
+  ::ng-deep.mat-form-field-wrapper {
+    padding-bottom: 12px;
+  }
+}
+
+@media (min-width: 1051px) {
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 280px !important;
+    min-width: calc(56% + 32px) !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+    // width: 219px !important;
+  }
+}
+
+@media (max-width: 1050px) {
+  ::ng-deep.cdk-overlay-container {
+    .cdk-overlay-connected-position-bounding-box {
+      .cdk-overlay-pane.mat-datepicker-popup {
+        width: 294px !important;
+      }
+    }
+  }
+
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 280px !important;
+    min-width: calc(56% + 32px) !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+    // width: 219px !important;
+  }
+}
+
+@media (max-width: 950px) {
+  ::ng-deep.cdk-overlay-container {
+    .cdk-overlay-connected-position-bounding-box {
+      .cdk-overlay-pane.mat-datepicker-popup {
+        width: 294px !important;
+      }
+    }
+  }
+
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 260px !important;
+    min-width: calc(56% + 32px) !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+    // width: 219px !important;
+  }
+}
+
+@media (max-width: 768.5px) {
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 249px !important;
+    min-width: calc(56% + 32px) !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+    // width: 219px !important;
+  }
+}
+@media (max-width: 576.5px) {
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 219px !important;
+    min-width: calc(56% + 32px) !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+    // width: 219px !important;
+  }
+
+  ///////////
+  ::ng-deep.mat-form-field-wrapper {
+    padding-bottom: 20px;
+  }
+
+  ::ng-deep.mat-form-field-subscript-wrapper {
+    top: calc(100% - 17px);
+  }
+}
+
+@media (max-width: 500px) {
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    min-width: calc(40% + -10px) !important ;
+  }
+
+  .mat-datepicker-content .mat-calendar {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 450px) {
+  ::ng-deep.cdk-overlay-container
+    .cdk-overlay-connected-position-bounding-box
+    .cdk-overlay-pane.mat-datepicker-popup {
+    left: 17% !important;
+  }
+
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 100% !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+  }
+
+  //////
+
+  .mat-error {
+    font-size: 10px;
+  }
+
+  ::ng-deep.mat-form-field-subscript-wrapper {
+    top: calc(100% - 12px);
+  }
+}
+
+@media (max-width: 375px) {
+  ::ng-deep.mat-datepicker-content .mat-calendar {
+    width: 219px !important;
+    height: 250px !important;
+  }
+
+  ::ng-deep.cdk-overlay-container
+    .cdk-overlay-connected-position-bounding-box
+    .cdk-overlay-pane.mat-datepicker-popup {
+    left: 21% !important;
+  }
+
+  ::ng-deep.cdk-overlay-container {
+    .cdk-overlay-connected-position-bounding-box {
+      .cdk-overlay-pane.mat-datepicker-popup {
+        width: 219px !important;
+      }
+    }
+  }
+
+  ::ng-deep.mat-select-panel:not([class*="mat-elevation-z"]) {
+    width: 100% !important;
+  }
+
+  ::ng-deep.cdk-overlay-pane {
+    transform: translateX(-6px) translateY(-9px) !important;
+  }
+
+  //////
+
+  .mat-error {
+    font-size: 9px;
+  }
+
+  ::ng-deep.mat-form-field-subscript-wrapper {
+    top: calc(100% - 10px);
+  }
+}

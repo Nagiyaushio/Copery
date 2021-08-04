@@ -1,0 +1,161 @@
+<div class="search">
+  <div class="search_box">
+    <div class="center_box">
+      <h1>Bắt đầu với Copery Elearning</h1>
+      <p>Chúng tôi tự hào mang đến cho bạn những khóa học chất lượng nhất</p>
+
+      <div class="content" role="main">
+        <div class="card_box">
+          <div class="form-group">
+            <input
+              class="form-control"
+              id="search-text"
+              aria-describedby="search-text"
+              [(ngModel)]="searchText"
+              placeholder="Bạn muốn tìm khóa học nào?"
+            />
+
+            <ul class="list-group list-group-flush">
+              <!--        [content]="c.tenKhoaHoc" -->
+              <li
+                class="list-group-item"
+                *ngFor="let c of dskh | filter: searchText"
+              >
+                <a
+                  class="row"
+                  routerLink="/detail/{{ c.maKhoaHoc }}"
+                  [queryParams]="{ tenKhoaHoc: c.tenKhoaHoc }"
+                >
+                  <p>{{ c.tenKhoaHoc }}</p>
+                  <p>{{ c.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="category container">
+  <h1>Danh mục của chúng tôi</h1>
+  <div class="row">
+    <div class="content_box" *ngFor="let item of dsdm">
+      <div class="repeat_div">
+        <div class="center_p">
+          <p>{{ item.tenDanhMuc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="best_courses">
+  <h1>Khóa học hàng đầu của chúng tôi</h1>
+  <p>
+    Với hàng chục khóa học chất lượng được các chuyên gia liên tục cập nhật và
+    sửa đổi
+  </p>
+  <!-- <div class="row">
+    <div class="col-sm-4" *ngFor="let item of dskh">
+      <app-khoa-hoc [khoaHoc]="item"></app-khoa-hoc>
+    </div>
+  </div> -->
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    >
+    <div ngxSlickItem *ngFor="let item of dskh" class="slide col-sm-4">
+      <app-khoa-hoc [khoaHoc]="item"></app-khoa-hoc>
+    </div>
+  </ngx-slick-carousel>
+</div>
+
+<div class="some_numbes row">
+  <div class="teachers">
+    <img src="../assets/images/home/teachers.png" alt="" />
+    <div class="content">
+      <p>GIẢNG VIÊN</p>
+      <p>17</p>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <img src="../assets/images/home/lessons-icon.png" alt="" />
+    <div class="content">
+      <p>BÀI HỌC</p>
+      <p>17</p>
+    </div>
+  </div>
+
+  <div class="students">
+    <img src="../assets/images/home/student-icon.png" alt="" />
+    <div class="content">
+      <p>HỌC VIÊN</p>
+      <p>17</p>
+    </div>
+  </div>
+</div>
+
+<div class="introduce_register container">
+  <h1>Đăng ký khóa học của bạn trong 5 bước đơn giản</h1>
+  <div class="row">
+    <div class="introduce step1">
+      <div class="round">
+        <h3>Bước 1</h3>
+      </div>
+
+      <p>Đăng ký tài khoản</p>
+    </div>
+
+    <div class="introduce line">
+      <p>.</p>
+    </div>
+
+    <div class="introduce step2">
+      <div class="round">
+        <h3>Bước 2</h3>
+      </div>
+      <p>Thêm khóa học vào giỏ hàng</p>
+    </div>
+
+    <div class="introduce line">
+      <p>.</p>
+    </div>
+
+    <div class="introduce step3">
+      <div class="round">
+        <h3>Bước 3</h3>
+      </div>
+      <p>Đăng ký khóa học trong giỏ hàng</p>
+    </div>
+
+    <div class="introduce line">
+      <p>.</p>
+    </div>
+
+    <div class="introduce step4">
+      <div class="round">
+        <h3>Bước 4</h3>
+      </div>
+      <p>Chờ xác nhận khóa học</p>
+    </div>
+
+    <div class="introduce line">
+      <p>.</p>
+    </div>
+
+    <div class="introduce step5">
+      <div class="round">
+        <h3>Bước 5</h3>
+      </div>
+      <p>Kiểm tra khóa học trong tài khoản</p>
+    </div>
+  </div>
+</div>
+
+<app-modal></app-modal>
+<ngx-spinner bdColor="rgba(51,51,51)" size="large"> </ngx-spinner>

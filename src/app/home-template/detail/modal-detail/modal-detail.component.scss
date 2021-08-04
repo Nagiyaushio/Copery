@@ -1,0 +1,95 @@
+.modal {
+  .modal-dialog {
+    .modal-content {
+      border-radius: 3px;
+      border: 1px solid #cfd0d1;
+      box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+
+      .modal-header {
+        padding: 15px 15px 0px 15px;
+        border: unset;
+        h4 {
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+          color: #29303b;
+          font-weight: 700;
+          font-size: 26px;
+        }
+      }
+
+      .modal-body {
+        padding: 0px 15px;
+        p {
+          font-size: 12px;
+        }
+
+        .description {
+          h1 {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            color: #29303b;
+            font-weight: 700;
+            font-size: 22px;
+          }
+        }
+
+        .content_info.row {
+          width: 100%;
+          margin: 0;
+          .views {
+            width: 50%;
+            border-right: 1px solid #cfd0d1;
+            img {
+              width: 50%;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+
+            p {
+              text-align: center;
+              margin: 6px 0px 0px;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+
+          .student {
+            width: 50%;
+            img {
+              width: 50%;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+
+            p {
+              text-align: center;
+              margin: 6px 0px 0px;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .modal-footer {
+        border: unset;
+        padding: 0 15px 16px;
+        justify-content: center;
+        .detail {
+          background-color: #3f90b5;
+        }
+        .add {
+          background-color: #28a745;
+          color: white;
+        }
+
+        .cart {
+          background-color: #3f51b5;
+          color: white;
+        }
+      }
+    }
+  }
+}

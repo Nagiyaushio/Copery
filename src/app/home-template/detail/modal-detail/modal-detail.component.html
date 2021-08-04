@@ -1,0 +1,61 @@
+<!-- The Modal -->
+<div class="modal" id="myModalDetail">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{ khoaHocNe.tenKhoaHoc }}</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>Ngày tạo: {{ khoaHocNe.ngayTao }}</p>
+
+        <div class="content_info row">
+          <div class="views">
+            <img src="../assets/images/icon-course/student-icon1.png" alt="" />
+            <p>{{ khoaHocNe.soLuongHocVien }}</p>
+          </div>
+
+          <div class="student">
+            <img src="../assets/images/icon-course/watch.png" alt="" />
+            <p>{{ khoaHocNe.luotXem }}</p>
+          </div>
+        </div>
+
+        <div class="description">
+          <h1>Mô tả</h1>
+          <p>{{ khoaHocNe.moTa }}</p>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button
+          mat-raised-button
+          color="primary"
+          routerLink="/detail/{{ khoaHocNe.maKhoaHoc }}"
+          [queryParams]="{ tenKhoaHoc: khoaHocNe.tenKhoaHoc }"
+          data-dismiss="modal"
+          (click)="reload()"
+          class="detail"
+        >
+          Chi tiết
+        </button>
+        <button
+          mat-raised-button
+          class="add"
+          *ngIf="buttonGone"
+          (click)="addButton()"
+        >
+          Thêm vào giỏ
+        </button>
+        <button mat-raised-button class="cart" *ngIf="buttonShow">
+          Tới giỏ hàng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

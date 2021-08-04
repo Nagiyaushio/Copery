@@ -1,0 +1,84 @@
+<!-- <div *ngIf=dsKHGhiDanh"></div> -->
+<div class="user_edit">
+  <div class="user_editable">
+    <h4>Khóa học đã ghi danh</h4>
+    <p>Thông tin về khóa học đã ghi danh</p>
+  </div>
+</div>
+
+<div class="no_course" *ngIf="noCourse">
+  <p>KHÔNG CÓ KHÓA HỌC ĐÃ ĐƯỢC ĐĂNG KÝ</p>
+</div>
+
+<div class="signup_course" *ngIf="yesCourse">
+  <div class="table_set">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th
+            [class.active]="order === 'info.account'"
+            (click)="setOrder('info.account')"
+            class="mdl-data-table__cell--non-numeric"
+            style="text-align: center"
+          >
+            KHÓA HỌC
+
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+            <span class="hover_span">▲</span>
+          </th>
+          <th></th>
+          <th
+            style="text-align: center"
+            [class.active]="order === 'nguoiTao.hoTen'"
+            (click)="setOrder('nguoiTao.hoTen')"
+            class="name"
+          >
+            GIẢNG VIÊN
+
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+            <span class="hover_span">▲</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let khoaHoc of dsKHGhiDanh
+              | paginate: { itemsPerPage: 2, currentPage: p }
+              | orderBy: order:reverse;
+            index as i
+          "
+        >
+          <td class="img">
+            <img [src]="khoaHoc.hinhAnh" alt="" />
+          </td>
+          <td class="info">
+            <div class="row">
+              <button
+                mat-raised-button
+                color="primary"
+                routerLink="/detail/{{ khoaHoc.maKhoaHoc }}"
+                [queryParams]="{ tenKhoaHoc: khoaHoc.tenKhoaHoc }"
+              >
+                Chi tiết
+              </button>
+
+              <p>{{ khoaHoc.tenKhoaHoc }}</p>
+            </div>
+            <p>{{ khoaHoc.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</p>
+          </td>
+          <td class="name">
+            <p>{{ khoaHoc.nguoiTao.hoTen }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <pagination-controls
+    (pageChange)="p = $event"
+    previousLabel="Trước"
+    nextLabel="Sau"
+  ></pagination-controls>
+</div>

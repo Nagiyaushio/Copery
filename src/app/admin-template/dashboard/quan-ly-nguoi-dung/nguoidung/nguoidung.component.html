@@ -1,0 +1,145 @@
+<h1>Người dùng</h1>
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/admin/dashboard/users/add"
+  class="mb-4"
+>
+  Thêm người dùng
+</button>
+<div class="search_box">
+  <mat-form-field appearance="legacy">
+    <mat-label>Tìm kiếm </mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchText"
+      placeholder="Có thể tìm theo mã loại, tên, SĐT,..."
+    />
+  </mat-form-field>
+</div>
+<div class="table_box">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="text-align: center">STT</th>
+        <th
+          [class.active]="order === 'info.account'"
+          (click)="setOrder('info.account')"
+          class="mdl-data-table__cell--non-numeric"
+        >
+          TÀI KHOẢN
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th></th>
+        <th [class.active]="order === 'hoTen'" (click)="setOrder('hoTen')">
+          HỌ TÊN
+
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th
+          [class.active]="order === 'email'"
+          (click)="setOrder('email')"
+          style="width: 100px"
+        >
+          EMAIL <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th
+          [class.active]="order === 'soDt'"
+          (click)="setOrder('soDt')"
+          style="width: 100px"
+        >
+          SĐT <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th [class.active]="order === 'matKhau'" (click)="setOrder('matKhau')">
+          MẬT KHẨU
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+
+        <th
+          [class.active]="order === 'maLoaiNguoiDung'"
+          (click)="setOrder('maLoaiNguoiDung')"
+          class="maloai_nguoidung"
+          style="width: 100px"
+        >
+          MÃ LOẠI
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+          <span class="hover_span">▲</span>
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let user of dsnd
+            | filter: searchText
+            | paginate: { itemsPerPage: 10, currentPage: p }
+            | orderBy: order:reverse;
+          index as i
+        "
+        class="this_is"
+      >
+        <td style="text-align: center" class="number">
+          <p>{{ i + 1 }}</p>
+        </td>
+
+        <td class="user_account">
+          <p>{{ user.taiKhoan }}</p>
+        </td>
+
+        <td class="detail">
+          <button
+            mat-raised-button
+            color="primary"
+            routerLink="/admin/dashboard/users/{{ user.taiKhoan }}"
+          >
+            Chi tiết
+          </button>
+        </td>
+
+        <td class="user_fullname">
+          <p>{{ user.hoTen }}</p>
+        </td>
+
+        <td class="user_email">
+          <p>{{ user.email }}</p>
+        </td>
+
+        <td class="user_tel">
+          <p>{{ user.soDt }}</p>
+        </td>
+
+        <td class="user_pass">
+          <p>{{ user.matKhau }}</p>
+        </td>
+
+        <td style="text-align: left" class="user_type">
+          <p>{{ user.maLoaiNguoiDung }}</p>
+        </td>
+
+        <app-bang-nguoidung [nguoiDung]="user"></app-bang-nguoidung>
+      </tr>
+      <!-- </div> -->
+    </tbody>
+  </table>
+  <pagination-controls
+    (pageChange)="p = $event"
+    previousLabel="Trước"
+    nextLabel="Sau"
+  ></pagination-controls>
+</div>

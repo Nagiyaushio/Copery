@@ -1,0 +1,127 @@
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px 0 10px 0;
+}
+
+::ng-deep.mat-form-field-infix {
+  border-top: 5px solid transparent;
+}
+
+::ng-deep.mat-form-field-wrapper {
+  padding-bottom: 13px;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 71%;
+  margin-top: 0px;
+  top: calc(100% - 12px);
+}
+
+.mat-form-field {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+
+  .signup_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: solid 1px #cfd0d1;
+    border-radius: 3px;
+    width: 40%;
+
+    background-color: #ebebebe2;
+    padding: 16px 32px;
+    .form-padding {
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn.btn-success {
+      margin-bottom: 15px;
+    }
+
+    .row {
+      width: 100%;
+      margin: 0;
+      padding: 25px 0 24px;
+      .signin_text {
+        text-align: center;
+        font-size: 14px;
+        margin: auto;
+        text-align: right;
+        width: 50%;
+        font-weight: bold;
+        .signin {
+          text-decoration: none;
+        }
+      }
+
+      h3 {
+        position: relative;
+        z-index: 1;
+
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        color: #29303b;
+        display: block;
+        font-weight: 700;
+        font-size: 25px;
+        margin: 0;
+        text-align: left;
+
+        width: 50%;
+      }
+    }
+  }
+}
+
+.mat-hint {
+  color: #f44336;
+}
+
+@media (max-width: 992.2121px) {
+  .container {
+    // height: 91%;
+    .signup_form {
+      width: 56%;
+    }
+  }
+}
+
+@media (max-width: 768.25px) {
+  .container {
+    // height: 87%;
+    .signup_form {
+      width: 72%;
+      padding: 0px 32px;
+    }
+  }
+}
+
+@media (max-width: 575.25px) {
+  .container {
+    // height: 87%;
+    .signup_form {
+      width: 79%;
+      padding: 0px 21px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    .signup_form {
+      width: 85%;
+      padding: 0px 18px;
+    }
+  }
+}

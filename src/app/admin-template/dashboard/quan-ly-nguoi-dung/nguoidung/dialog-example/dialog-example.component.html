@@ -1,0 +1,196 @@
+<div class="container">
+  <div class="box-shadow">
+    <h3>Sửa người dùng</h3>
+    <form
+      #EditUserForm="ngForm"
+      (ngSubmit)="editUser(EditUserForm.value)"
+      class="signup_form"
+    >
+      <div class="form-padding">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Tài khoản</mat-label>
+            <input
+              matInput
+              placeholder="Ex: gacon123"
+              name="taiKhoan"
+              minlength="7"
+              maxlength="15"
+              pattern="^[a-zA-Z0-9]*$"
+              required
+              [(ngModel)]="nguoiDung.taiKhoan"
+              #TaiKhoan="ngModel"
+              disabled
+            />
+            <mat-error
+              *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+            >
+              <mat-hint *ngIf="TaiKhoan.errors.required"
+                >Nhập tài khoản</mat-hint
+              >
+              <mat-hint
+                *ngIf="TaiKhoan.errors.minlength || TaiKhoan.errors.pattern"
+              >
+                Tài khoản trên 7 ký tự, không có ký tự đặc biệt và được viết
+                liền
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Mật khẩu</mat-label>
+            <input
+              matInput
+              placeholder="Ex: gaconxyz@123"
+              name="matKhau"
+              minlength="7"
+              maxlength="15"
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              required
+              [(ngModel)]="nguoiDung.matKhau"
+              #MatKhau="ngModel"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+            <mat-error
+              *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)"
+            >
+              <mat-hint *ngIf="MatKhau.errors.required">Nhập mật khẩu</mat-hint>
+              <mat-hint *ngIf="MatKhau.errors.minlength">
+                Mật khẩu phải trên 7 ký tự
+              </mat-hint>
+
+              <mat-hint *ngIf="MatKhau.errors.maxlength">
+                Mật khẩu phải dưới 15 ký tự
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Họ tên</mat-label>
+            <input
+              matInput
+              placeholder="Ex: Gà Con"
+              name="hoTen"
+              #HoTen="ngModel"
+              minlength="4"
+              matInput
+              [pattern]="
+                '^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ' +
+                'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
+                'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
+              "
+              required
+              [(ngModel)]="nguoiDung.hoTen"
+            />
+            <mat-error *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)">
+              <mat-hint *ngIf="HoTen.errors.required">Nhập họ tên</mat-hint>
+              <mat-hint *ngIf="HoTen.errors.minlength || HoTen.errors.pattern">
+                Họ tên phải trên 4 ký tự và không có ký tự đặc biệt
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              #Email="ngModel"
+              matInput
+              placeholder="Ex: gacon123@yahoo.com"
+              name="email"
+              matInput
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              required
+              [(ngModel)]="nguoiDung.email"
+            />
+            <mat-error *ngIf="Email.errors && (Email.dirty || Email.touched)">
+              <mat-hint *ngIf="Email.errors.required">Nhập email</mat-hint>
+              <mat-hint *ngIf="Email.errors.pattern">
+                Email phải được viết liền và không có ký tự đặc biệt
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Số điện thoại</mat-label>
+            <input
+              matInput
+              placeholder="Ex: 0123456789"
+              name="soDT"
+              matInput
+              pattern="^[0-9]*$"
+              required
+              maxlength="10"
+              minlength="10"
+              #SoDT="ngModel"
+              [(ngModel)]="nguoiDung.soDt"
+            />
+            <mat-error *ngIf="SoDT.errors && (SoDT.dirty || SoDT.touched)">
+              <mat-hint *ngIf="SoDT.errors.required"
+                >Nhập số điện thoại</mat-hint
+              >
+              <mat-hint *ngIf="SoDT.errors.pattern || SoDT.errors.minlength">
+                Số điện thoại phải đủ 10 số và không điền chữ
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <span>Loại người dùng</span>
+          <mat-radio-group
+            aria-label="Select an option"
+            name="maLoaiNguoiDung"
+            required
+            [(ngModel)]="maLoaiNguoiDung"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              *ngFor="let user of usertype"
+              [value]="user"
+            >
+              {{ user }}</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <div class="forbutton row">
+          <button
+            mat-raised-button
+            color="accent"
+            type="submit"
+            class="btn btn-success mr-2"
+            [disabled]="!EditUserForm.valid"
+          >
+            Cập nhật người dùng
+          </button>
+
+          <button
+            type="button"
+            mat-stroked-button
+            color="accent"
+            mat-dialog-close
+          >
+            Quay lại danh sách
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

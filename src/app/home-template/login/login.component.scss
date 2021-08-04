@@ -1,0 +1,118 @@
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px 0 10px 0;
+}
+
+::ng-deep.mat-form-field-infix {
+  border-top: 5px solid transparent;
+}
+
+::ng-deep.mat-form-field-wrapper {
+  padding-bottom: 17px;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 71%;
+  margin-top: 0px;
+  top: calc(100% - 14px);
+}
+
+.mat-form-field {
+  width: 100%;
+  margin: 0 auto;
+}
+.container {
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+
+  .signup_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: solid 1px #cfd0d1;
+    width: 38%;
+    background-color: #ebebebe2;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border-radius: 3px;
+    padding: 16px 32px;
+    .form-padding {
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+
+    .button_login {
+      margin-bottom: 15px;
+    }
+
+    .row {
+      width: 100%;
+      margin: 0;
+      padding: 30px 0 24px;
+
+      .signin_text {
+        text-align: center;
+        font-size: 14px;
+        margin: auto;
+        text-align: right;
+        width: 50%;
+        font-weight: bold;
+        .signin {
+          text-decoration: none;
+        }
+      }
+
+      h3 {
+        position: relative;
+        z-index: 1;
+
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        color: #29303b;
+        display: block;
+        font-weight: 700;
+        font-size: 25px;
+        margin: 0;
+        text-align: left;
+
+        width: 50%;
+      }
+    }
+  }
+}
+
+.mat-hint {
+  color: #f44336;
+}
+@media (max-width: 992.223px) {
+  .container {
+    .signup_form {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 768.223px) {
+  .container {
+    .signup_form {
+      width: 66%;
+    }
+  }
+}
+
+@media (max-width: 576.223px) {
+  .container {
+    .signup_form {
+      width: 70%;
+      padding: 0px 20px;
+      .row {
+        h3 {
+          font-size: 21px;
+        }
+      }
+    }
+  }
+}

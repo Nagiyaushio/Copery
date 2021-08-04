@@ -1,0 +1,143 @@
+<div *ngIf="khoaHoc">
+  <div class="background_image">
+    <div class="center_div">
+      <h1>{{ khoaHoc.tenKhoaHoc }}</h1>
+      <p>{{ khoaHoc.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</p>
+    </div>
+  </div>
+
+  <div class="container detail">
+    <div class="course row">
+      <!-- có ngIf khóa học thì không bị lõi -->
+
+      <div class="course_short">
+        <div class="name_data row">
+          <h1>{{ khoaHoc.tenKhoaHoc }}</h1>
+          <button
+            mat-raised-button
+            color
+            (click)="addCart()"
+            *ngIf="buttonGone"
+            class="green_button"
+          >
+            Thêm vào giỏ
+          </button>
+
+          <button
+            routerLink="/cart"
+            mat-raised-button
+            color="primary"
+            *ngIf="buttonShow"
+          >
+            Tới giỏ hàng
+          </button>
+
+          <button
+            mat-raised-button
+            class="detail_but"
+            routerLink="/user/profile"
+            *ngIf="buttonDetail"
+          >
+            Tới trang hồ sơ
+          </button>
+        </div>
+
+        <div class="teacher_category_student_add row">
+          <div class="teacher row">
+            <img src="../assets/images/icon-course/teacher-icon.jpg" alt="" />
+            <div class="teacher_info">
+              <h1>Giảng viên</h1>
+              <p>{{ khoaHoc.nguoiTao.hoTen }}</p>
+            </div>
+          </div>
+          <div class="category">
+            <h1>Danh mục</h1>
+            <p>{{ khoaHoc.danhMucKhoaHoc.maDanhMucKhoahoc }}</p>
+          </div>
+          <div class="student row">
+            <img src="../assets/images/icon-course/student-icon1.png" alt="" />
+            <p>{{ khoaHoc.soLuongHocVien }}</p>
+          </div>
+        </div>
+
+        <div class="course_image">
+          <img [src]="khoaHoc.hinhAnh" alt="" />
+        </div>
+      </div>
+
+      <div class="course_info">
+        <h1>Thông tin khóa học</h1>
+        <div class="text">
+          <div class="name_course row">
+            <img src="../assets/images/icon-detail/name-icon.png" alt="" />
+            <p>
+              Tên khóa học: <strong>{{ khoaHoc.tenKhoaHoc }}</strong>
+            </p>
+          </div>
+
+          <div class="category_course row">
+            <img src="../assets/images/icon-detail/category-icon.png" alt="" />
+            <p>
+              Danh mục:
+              <strong>{{ khoaHoc.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</strong>
+            </p>
+          </div>
+
+          <div class="date_course row">
+            <img src="../assets/images/icon-detail/clock-icon.png" alt="" />
+            <p>
+              Ngày tạo: <strong>{{ khoaHoc.ngayTao }}</strong>
+            </p>
+          </div>
+
+          <div class="views_course row">
+            <img src="../assets/images/icon-detail/view-icon-15.png" alt="" />
+            <p>
+              Lượt xem: <strong>{{ khoaHoc.luotXem }}</strong>
+            </p>
+          </div>
+
+          <div class="student_course row">
+            <img src="../assets/images/icon-detail/student-icon.png" alt="" />
+            <p>
+              Học viên: <strong>{{ khoaHoc.soLuongHocVien }}</strong>
+            </p>
+          </div>
+
+          <div class="description_course row">
+            <img
+              src="../assets/images/icon-detail/description-icon.png"
+              alt=""
+            />
+            <p>
+              Mô tả: <strong>{{ khoaHoc.moTa }}</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container others">
+    <h1>CÓ THỂ BẠN QUAN TÂM</h1>
+
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      >
+      <div ngxSlickItem *ngFor="let item of dskhDetail" class="slide">
+        <app-detail-khoahoc
+          [khoaHocNe]="item"
+          (idOut)="idForUsed($event)"
+        ></app-detail-khoahoc>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+
+  <app-modal-detail></app-modal-detail>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+<ngx-spinner bdColor="rgba(51,51,51)" size="large"> </ngx-spinner>

@@ -1,0 +1,234 @@
+<div class="container">
+  <div class="box-shadow">
+    <h3>Thêm khóa học</h3>
+    <form
+      #AddCourseForm="ngForm"
+      (ngSubmit)="addCourse(AddCourseForm.value)"
+      class="signup_form"
+    >
+      <div class="form-padding row">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Tên khóa học</mat-label>
+            <input
+              matInput
+              placeholder="Tên khóa học"
+              name="tenKhoaHoc"
+              #TenKH="ngModel"
+              pattern="^[A-Za-z0-9 ]+$"
+              ngModel
+              required
+            />
+            <mat-error *ngIf="TenKH.errors && (TenKH.dirty || TenKH.touched)">
+              <mat-hint *ngIf="TenKH.errors.required"
+                >Nhập tên khóa học</mat-hint
+              >
+              <mat-hint *ngIf="TenKH.errors.pattern">
+                Tên khóa học không có ký tự đặc biệt
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Mã khóa học</mat-label>
+            <input
+              matInput
+              placeholder="Mã khóa học"
+              name="maKhoaHoc"
+              #MaKH="ngModel"
+              pattern="^(\d|\w)+$"
+              ngModel
+              required
+            />
+            <mat-error *ngIf="MaKH.errors && (MaKH.dirty || MaKH.touched)">
+              <mat-hint *ngIf="MaKH.errors.required">Nhập mã khóa học</mat-hint>
+              <mat-hint *ngIf="MaKH.errors.pattern">
+                Mã khóa học không có ký tự đặc biệt và được viết liền
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Mã danh mục khóa học</mat-label>
+            <mat-select
+              name="maDanhMucKhoaHoc"
+              ngModel
+              #MaDanhMucKhoaHoc="ngModel"
+              required
+              [(ngModel)]="maDanhMucKhoaHoc"
+            >
+              <mat-option *ngFor="let kh of dsmkh" [value]="kh.maDanhMuc">
+                {{ kh.maDanhMuc }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="
+                MaDanhMucKhoaHoc.errors &&
+                (MaDanhMucKhoaHoc.dirty || MaDanhMucKhoaHoc.touched)
+              "
+            >
+              <mat-hint *ngIf="MaDanhMucKhoaHoc.errors.required"
+                >Chọn danh mục khóa học</mat-hint
+              >
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Lượt xem</mat-label>
+            <input
+              matInput
+              placeholder="Nhập lượt xem"
+              name="luotXem"
+              #LuotXem="ngModel"
+              matInput
+              pattern="^[0-9]*$"
+              ngModel
+              required
+            />
+            <mat-error
+              *ngIf="LuotXem.errors && (LuotXem.dirty || LuotXem.touched)"
+            >
+              <mat-hint *ngIf="LuotXem.errors.required">Nhập lượt xem</mat-hint>
+              <mat-hint *ngIf="LuotXem.errors.pattern">
+                Lượt xem phải là số
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Đánh giá</mat-label>
+            <input
+              matInput
+              placeholder="Nhập đánh giá"
+              name="danhGia"
+              #DanhGia="ngModel"
+              matInput
+              pattern="^[0-9]*$"
+              ngModel
+              required
+            />
+            <mat-error
+              *ngIf="DanhGia.errors && (DanhGia.dirty || DanhGia.touched)"
+            >
+              <mat-hint *ngIf="DanhGia.errors.required">Nhập đánh giá</mat-hint>
+              <mat-hint *ngIf="DanhGia.errors.pattern">
+                Đánh giá phải là số
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Chọn ngày tạo</mat-label>
+            <input
+              matInput
+              [matDatepicker]="dp"
+              name="ngayTao"
+              ngModel
+              required
+              #NgayTao="ngModel"
+            />
+            <!--               [(ngModel)]="khoaHoc.ngayTao" -->
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp></mat-datepicker>
+
+            <mat-error
+              *ngIf="NgayTao.errors && (NgayTao.dirty || NgayTao.touched)"
+            >
+              <mat-hint *ngIf="NgayTao.errors.required">Chọn ngày tạo</mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Bí danh</mat-label>
+            <input
+              matInput
+              placeholder="Nhập bí danh"
+              name="biDanh"
+              #BiDanh="ngModel"
+              matInput
+              type="text"
+              ngModel
+              required
+              pattern="^(\d|\w)+$"
+            />
+            <mat-error
+              *ngIf="BiDanh.errors && (BiDanh.dirty || BiDanh.touched)"
+            >
+              <mat-hint *ngIf="BiDanh.errors.required">Nhập bí danh</mat-hint>
+              <mat-hint *ngIf="BiDanh.errors.pattern">
+                Bí danh phải được viết liền và không có kí tự đặc biệt
+              </mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group description">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Mô tả</mat-label>
+            <textarea
+              matInput
+              placeholder="Nhập mô tả"
+              name="moTa"
+              #MoTa="ngModel"
+              ngModel
+              required
+            ></textarea>
+            <mat-error *ngIf="MoTa.errors && (MoTa.dirty || MoTa.touched)">
+              <mat-hint *ngIf="MoTa.errors.required">Nhập mô tả</mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group image">
+          <input
+            type="file"
+            #HinhAnh="ngModel"
+            ngModel
+            name="hinhAnh"
+            required
+            (change)="OnFileSelected($event)"
+          />
+          <!--    -->
+          <mat-error
+            *ngIf="HinhAnh.errors && (HinhAnh.dirty || HinhAnh.touched)"
+          >
+            <mat-hint *ngIf="HinhAnh.errors.required">Chọn hình ảnh</mat-hint>
+          </mat-error>
+        </div>
+
+        <div class="button_div row">
+          <button
+            mat-raised-button
+            color="accent"
+            type="submit"
+            class="btn btn-success"
+          >
+            <!--   [disabled]="!AddCourseForm.valid" -->
+            Thêm khóa học
+          </button>
+
+          <button
+            type="button"
+            mat-stroked-button
+            color="accent"
+            routerLink="/admin/dashboard/courses/list"
+          >
+            Quay lại danh sách
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

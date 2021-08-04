@@ -1,0 +1,126 @@
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  background-color: #218838;
+}
+
+@media (max-width: 992.5px) {
+  .mat-flat-button.mat-accent,
+  .mat-raised-button.mat-accent,
+  .mat-fab.mat-accent,
+  .mat-mini-fab.mat-accent {
+    width: 100%;
+  }
+}
+
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+  color: #218838;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px 0 10px 0;
+}
+
+::ng-deep.mat-form-field-infix {
+  border-top: 5px solid transparent;
+}
+
+::ng-deep.mat-form-field-wrapper {
+  padding-bottom: 17px;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 71%;
+  margin-top: 0px;
+  top: calc(100% - 14px);
+}
+
+//set width cho dialog
+::ng-deep.cdk-overlay-pane {
+  width: 500px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mat-radio-button {
+  margin: 11px 13px;
+}
+
+//đổi màu border radio
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #218838;
+}
+
+//đổi màu radio
+::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #218838;
+}
+
+::ng-deep.mat-dialog-container {
+  padding: 0;
+}
+//đổi màu báo lỗi
+.mat-hint {
+  color: #f44336;
+}
+
+.user_edit {
+  .user_editable {
+    border-radius: 14px;
+
+    h4 {
+      padding: 16px 24px 0px 24px;
+      margin: 0;
+
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: #29303b;
+      display: block;
+      font-weight: 700;
+      font-size: 27px;
+    }
+
+    p {
+      padding: 7px 24px;
+      font-size: 12px;
+      margin: 0;
+      border-bottom: 1px solid #757778;
+    }
+
+    .signup_form {
+      .form-padding {
+        padding: 25px 24px;
+        .form-group {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .user_edit {
+    .user_editable {
+      h4 {
+        font-size: 23px;
+      }
+      .signup_form {
+        .form-padding {
+          padding: 25px 11px;
+        }
+      }
+    }
+  }
+}

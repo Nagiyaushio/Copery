@@ -1,0 +1,244 @@
+<div class="carousel_banner">
+  <div class="center_div">
+    <h1>Khóa học</h1>
+    <p>Khóa học <b>Copery</b> elearning</p>
+  </div>
+</div>
+
+<div class="container courses">
+  <div class="content">
+    <div class="search-course">
+      <mat-form-field appearance="outline">
+        <mat-label>Tìm kiếm</mat-label>
+        <input
+          matInput
+          [(ngModel)]="searchText"
+          placeholder="Có thể tìm theo tên, mã loại,..."
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="courses row" [ngSwitch]="viewMode">
+        <!-- 1 -->
+        <div *ngSwitchCase="'tab1'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t1 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div *ngSwitchCase="'tab2'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | tuduy
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t2 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div *ngSwitchCase="'tab3'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | thietke
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t3 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div *ngSwitchCase="'tab4'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | frontend
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t4 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div *ngSwitchCase="'tab5'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | backend
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t5 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div *ngSwitchCase="'tab6'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | didong
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t6 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div *ngSwitchCase="'tab7'" class="switch row">
+          <div
+            class="col-md-3"
+            *ngFor="
+              let item of dskhAll
+                | filter: searchText
+                | fullstack
+                | paginate: { itemsPerPage: perpageitemAll, currentPage: t7 }
+            "
+          >
+            <app-find-khoahoc
+              [khoaHoc]="item"
+              (maKhoaHoc)="changeEvent($event)"
+            ></app-find-khoahoc>
+          </div>
+        </div>
+      </div>
+
+      <div class="category_course">
+        <h1>Danh mục khóa học</h1>
+        <ul class="navbar-nav">
+          <li
+            (click)="viewMode = 'tab1'; tabone()"
+            [ngClass]="{ active: viewMode == 'tab1' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Tất cả
+          </li>
+
+          <li
+            (click)="viewMode = 'tab2'; tabtwo()"
+            [ngClass]="{ active: viewMode == 'tab2' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Tư duy lập trình
+          </li>
+
+          <li
+            (click)="viewMode = 'tab3'; tabthree()"
+            [ngClass]="{ active: viewMode == 'tab3' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Thiết kế web
+          </li>
+
+          <li
+            (click)="viewMode = 'tab4'; tabfour()"
+            [ngClass]="{ active: viewMode == 'tab4' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Lập trình Front-end
+          </li>
+
+          <li
+            (click)="viewMode = 'tab5'; tabfive()"
+            [ngClass]="{ active: viewMode == 'tab5' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Lập trình Back-end
+          </li>
+
+          <li
+            (click)="viewMode = 'tab6'; tabsix()"
+            [ngClass]="{ active: viewMode == 'tab6' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Lập trình di động
+          </li>
+
+          <li
+            (click)="viewMode = 'tab7'; tabseven()"
+            [ngClass]="{ active: viewMode == 'tab7' }"
+            class="nav-item"
+            routerLinkActive="active_category"
+          >
+            Lập trình Full Stack
+          </li>
+        </ul>
+      </div>
+    </div>
+    <app-modal></app-modal>
+  </div>
+  <pagination-controls
+    (pageChange)="pageChanged($event)"
+    previousLabel=""
+    nextLabel=""
+  ></pagination-controls>
+</div>
+
+<div class="container others">
+  <h1>CÓ THỂ BẠN QUAN TÂM</h1>
+
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    >
+    <div ngxSlickItem *ngFor="let item of dskhAll" class="slide">
+      <app-find-khoahoc
+        [khoaHoc]="item"
+        (maKhoaHoc)="changeEvent($event)"
+      ></app-find-khoahoc>
+    </div>
+  </ngx-slick-carousel>
+</div>
+
+<ngx-spinner bdColor="rgba(51,51,51)" size="large"> </ngx-spinner>

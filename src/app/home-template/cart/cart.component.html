@@ -1,0 +1,114 @@
+<div class="cart_introduce">
+  <div class="center_div">
+    <h1>Thông tin giỏ hàng</h1>
+    <p>Giỏ hàng <b>Copery</b> elearning</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cart_content row">
+    <div class="cart_table">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th
+              class="mdl-data-table__cell--non-numeric"
+              [class.active]="order === 'tenKhoaHoc'"
+              (click)="setOrder('tenKhoaHoc')"
+            >
+              KHÓA HỌC
+
+              <span [hidden]="reverse">▼</span>
+              <span [hidden]="!reverse">▲</span>
+              <span class="hover_span">▲</span>
+            </th>
+            <th></th>
+            <th
+              [class.active]="order === 'nguoiTao.hoTen'"
+              (click)="setOrder('nguoiTao.hoTen')"
+              class="teacher"
+              style="text-align: center"
+            >
+              GIẢNG VIÊN <span [hidden]="reverse">▼</span>
+              <span [hidden]="!reverse">▲</span>
+              <span class="hover_span">▲</span>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of products
+                | paginate: { itemsPerPage: 4, currentPage: p }
+                | orderBy: order:reverse;
+              index as i
+            "
+          >
+            <td class="numbers" style="text-align: center">{{ i + 1 }}</td>
+            <td class="course_image"><img [src]="item.hinhAnh" alt="" /></td>
+            <td class="course_info">
+              <p class="course_name">{{ item.tenKhoaHoc }}</p>
+              <p class="course_category">
+                {{ item.danhMucKhoaHoc.tenDanhMucKhoaHoc }}
+              </p>
+
+              <button
+                mat-raised-button
+                class="button_detail"
+                routerLink="/detail/{{ item.maKhoaHoc }}"
+                [queryParams]="{ tenKhoaHoc: item.tenKhoaHoc }"
+              >
+                Chi tiết
+              </button>
+            </td>
+            <td class="teachers">
+              <p class="teacher" style="text-align: center">
+                {{ item.nguoiTao.hoTen }}
+              </p>
+            </td>
+            <td class="button_delete">
+              <button mat-raised-button color="warn" (click)="removeItem(item)">
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        style="text-align: center; padding: 15px 0"
+        class="no_item"
+        *ngIf="noItem"
+      >
+        <strong style="color: red">KHÔNG CÓ KHÓA HỌC NÀO TRONG GIỎ HÀNG</strong>
+      </div>
+
+      <pagination-controls
+        (pageChange)="p = $event"
+        previousLabel="Trước"
+        nextLabel="Sau"
+        class="gone768px"
+      ></pagination-controls>
+    </div>
+    <pagination-controls
+      (pageChange)="p = $event"
+      previousLabel="Trước"
+      nextLabel="Sau"
+      style="width: 100%"
+      class="show768px"
+    ></pagination-controls>
+    <div class="cart_confirm">
+      <div class="confirm_content">
+        <h1>Thông tin đơn hàng</h1>
+        <div class="row">
+          <p class="text">Số lượng:</p>
+          <p class="number">{{ number }}</p>
+        </div>
+        <button mat-raised-button (click)="confirmCart()">
+          Xác nhận đơn hàng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

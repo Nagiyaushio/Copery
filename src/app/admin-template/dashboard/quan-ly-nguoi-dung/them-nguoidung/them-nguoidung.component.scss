@@ -1,0 +1,160 @@
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  background-color: #218838;
+}
+
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+  color: #218838;
+}
+
+// ::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+//   padding: 10px 0 10px 0;
+// }
+
+::ng-deep.mat-form-field-infix {
+  border-top: 5px solid transparent;
+}
+
+::ng-deep.mat-form-field-wrapper {
+  padding-bottom: 17px;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 71%;
+  margin-top: 0px;
+  top: calc(100% - 14px);
+}
+
+.mat-form-field {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mat-radio-button {
+  margin: 11px 13px;
+}
+
+//đổi màu border radio
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #218838;
+}
+
+//đổi màu radio
+
+::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #218838;
+}
+
+.container {
+  padding: 40px 150px;
+  .box-shadow {
+    border: solid 1px #cfd0d1;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  }
+
+  h3 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    margin: 0;
+    padding: 18px 64px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #29303b;
+    display: block;
+    font-weight: 700;
+    font-size: 25px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+      width: 50%;
+      border-bottom: solid 1px #b9b9ba;
+    }
+  }
+
+  .form-padding {
+    padding: 18px 24px;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1200.52px) {
+  .container {
+    padding: 40px 100px;
+  }
+}
+
+@media (max-width: 992.52px) {
+  .container {
+    padding: 40px 60px;
+  }
+}
+
+@media (max-width: 768.52px) {
+  .container {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 576.52px) {
+  .container {
+    padding: 40px 20px;
+    .form-padding {
+      padding: 18px 11px;
+    }
+  }
+}
+
+.mat-hint {
+  color: #f44336;
+}
+
+@media (max-width: 410.5px) {
+  .container {
+    padding: 40px 0px;
+    h3 {
+      font-size: 23px;
+      padding: 18px 22px;
+    }
+  }
+
+  .mat-flat-button.mat-accent,
+  .mat-raised-button.mat-accent,
+  .mat-fab.mat-accent,
+  .mat-mini-fab.mat-accent {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .mat-button.mat-accent,
+  .mat-icon-button.mat-accent,
+  .mat-stroked-button.mat-accent {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .mat-radio-group {
+    font-size: 13px;
+  }
+  .mat-radio-button {
+    margin: 11px 3px;
+  }
+}

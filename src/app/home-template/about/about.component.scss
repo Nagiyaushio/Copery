@@ -1,0 +1,458 @@
+.introduce {
+  padding: 10px 68px;
+  height: 300px;
+  background-image: url(/../assets/images/office.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .center_div {
+    margin: 97px 0;
+
+    h1 {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: #29303b;
+      font-weight: 700;
+      font-size: 45px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 29px;
+      font-weight: 300;
+      b {
+        color: #d1af3c;
+      }
+    }
+  }
+}
+
+.welcome {
+  background-color: #e4dfdc;
+  padding: 60px 50px;
+  .content {
+    h1 {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: #29303b;
+      font-weight: 700;
+      font-size: 40px;
+      margin: 0;
+      padding-bottom: 16px;
+      text-align: center;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        left: 25%;
+        height: 3px;
+        border-radius: 2px;
+        background: linear-gradient(
+          130deg,
+          #ffffff20,
+          #000000 50%,
+          #ffffff21 86.05%
+        );
+      }
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      margin: 16px 0;
+      font-weight: 300;
+    }
+
+    .image_quote {
+      width: 75%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 600px;
+      padding-bottom: 50px;
+    }
+  }
+
+  .about_me.row {
+    margin: 0;
+    .few_word {
+      width: 70%;
+
+      .words {
+        // width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        background-color: white;
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+        border-radius: 3px;
+        padding: 150px 24px;
+        p {
+          margin-bottom: 10px;
+          font-weight: 300;
+        }
+      }
+    }
+    .awesome_youtube {
+      width: 30%;
+      margin: 0;
+
+      .mosh_reactjs {
+        width: 100%;
+        height: 50%;
+
+        iframe {
+          width: 100%;
+          height: 96%;
+          border-radius: 3px;
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+          border-width: 0;
+        }
+      }
+
+      .mosh_angular {
+        width: 100%;
+        height: 50%;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border-radius: 3px;
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+          border-width: 0;
+        }
+      }
+    }
+  }
+
+  .about_myselft {
+    padding: 60px 0;
+    h1 {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: #29303b;
+      font-weight: 700;
+      font-size: 32px;
+      margin: 0;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .content.row {
+      margin: 0;
+      padding-top: 40px;
+
+      width: 100%;
+      .image_avarta {
+        overflow: hidden;
+        width: 25%;
+        img {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+          border-radius: 3px;
+
+          transition: 0.5s;
+
+          &:hover {
+            transition: 0.5s;
+            transform: scale(1.25);
+          }
+        }
+      }
+
+      .hard_days {
+        width: 75%;
+        .mywords {
+          margin-left: 25px;
+          height: 100%;
+          background-color: white;
+          padding: 61px 0;
+
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+          border-radius: 3px;
+
+          h1 {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            color: #29303b;
+            font-weight: 700;
+            font-size: 32px;
+            margin: 0;
+            text-align: center;
+            padding-bottom: 10px;
+
+            &::after {
+              content: none;
+            }
+          }
+
+          p {
+            margin: 5px 0;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .work_place {
+    h1 {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: #29303b;
+      font-weight: 700;
+      font-size: 32px;
+      margin: 0;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 300;
+    }
+
+    .items.row {
+      margin: 0;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      .work_map {
+        width: 60%;
+        iframe {
+          height: 100%;
+          width: 100%;
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+          border-radius: 3px;
+        }
+      }
+
+      .work_image {
+        width: 40%;
+        img {
+          width: 95%;
+          height: 100%;
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+          border-radius: 3px;
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992.25px) {
+  .welcome {
+    .content {
+      .image_quote {
+        height: 525px;
+        width: 100%;
+      }
+    }
+
+    .about_me.row {
+      .few_word {
+        .words {
+          padding: 94px 24px;
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .about_myselft {
+      .content.row {
+        .hard_days {
+          .mywords {
+            padding: 11px 0;
+            h1 {
+              font-size: 25px;
+            }
+            p {
+              font-size: 14px;
+              margin: 4px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768.25px) {
+  .welcome {
+    .content {
+      .image_quote {
+        height: 450px;
+        width: 100%;
+      }
+    }
+
+    .about_me.row {
+      .few_word {
+        width: 100%;
+        .words {
+          padding: 36px 24px;
+          margin-right: 0px;
+          margin-bottom: 10px;
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .awesome_youtube.row {
+        flex-wrap: nowrap;
+        width: 100%;
+
+        .mosh_reactjs {
+          margin-top: 10px;
+          margin-right: 10px;
+          height: 100%;
+          iframe {
+            height: 100%;
+          }
+        }
+
+        .mosh_angular {
+          margin-top: 10px;
+          height: 100%;
+        }
+      }
+    }
+
+    .about_myselft {
+      .content.row {
+        .image_avarta {
+          width: 30%;
+        }
+
+        .hard_days {
+          width: 70%;
+
+          .mywords {
+            margin-left: 13px;
+            p {
+              margin: 1px 0;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    .work_place {
+      .items.row {
+        // height: 300px;
+        .work_image {
+          img {
+            margin-left: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576.52px) {
+  .introduce {
+    padding: 10px 32px;
+  }
+  .welcome {
+    padding: 32px;
+    .content {
+      .image_quote {
+        height: 308px;
+        width: 100%;
+      }
+    }
+
+    .about_me.row {
+      .few_word {
+        width: 100%;
+        .words {
+          padding: 17px 24px;
+          margin-right: 0px;
+          margin-bottom: 10px;
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .awesome_youtube.row {
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+
+        .mosh_reactjs {
+          margin-top: 17px;
+          margin-right: 0;
+
+          height: 100%;
+          iframe {
+            height: 100%;
+          }
+        }
+
+        .mosh_angular {
+          margin-top: 10px;
+          height: 100%;
+        }
+      }
+    }
+
+    .about_myselft {
+      .content.row {
+        .image_avarta {
+          width: 100%;
+        }
+
+        .hard_days {
+          width: 100%;
+          padding: 15px 0;
+
+          .mywords {
+            margin-left: 0px;
+            margin-top: 4px;
+            p {
+              margin: 4px 0;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    .work_place {
+      .items.row {
+        .work_map {
+          width: 100%;
+          height: 300px;
+        }
+        .work_image {
+          width: 100%;
+          img {
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 17px;
+          }
+        }
+      }
+    }
+  }
+}

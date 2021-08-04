@@ -1,0 +1,383 @@
+p {
+  margin: 0;
+  font-size: 14px;
+}
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  background-color: #28a745;
+}
+
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  background-color: #fb3;
+}
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+}
+
+::ng-deep.ngx-pagination.ng-star-inserted {
+  padding: 15px 0;
+}
+
+// table {
+//   width: 100%;
+// }
+::ng-deep.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+  text-decoration: none;
+}
+
+//chỉnh màu previous, next
+::ng-deep.pagination-previous.ng-star-inserted {
+  background-color: #e6e6e6;
+}
+
+::ng-deep.pagination-next.ng-star-inserted {
+  background-color: #e6e6e6;
+}
+
+.table thead th {
+  vertical-align: middle;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+h1 {
+  margin: 0;
+  padding: 15px 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: #29303b;
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.search_box {
+  margin: auto;
+  width: 50%;
+  mat-form-field {
+    width: 100%;
+    mat-label {
+      font-size: 18px;
+    }
+  }
+}
+
+.table_box {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  .table.table-striped {
+    width: 98%;
+    padding: 0 15px;
+    margin: 1rem auto;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+      0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+
+    thead th {
+      cursor: pointer;
+      margin-right: 15px;
+      margin-left: 15px;
+      font-size: 14.5px;
+
+      &:hover {
+        .hover_span {
+          opacity: 1;
+          transition: 0.75s;
+        }
+      }
+
+      span {
+        visibility: hidden;
+        display: none;
+      }
+
+      &.active {
+        color: #000;
+
+        span {
+          visibility: visible;
+          display: initial;
+        }
+        .hover_span {
+          display: none;
+        }
+      }
+
+      .hover_span {
+        visibility: visible;
+        display: initial;
+        opacity: 0;
+        // transition: 0.75s;
+      }
+    }
+
+    tbody {
+      tr {
+        .number {
+          p {
+            width: 30px;
+          }
+        }
+
+        .user_account {
+          p {
+            width: 180px;
+          }
+        }
+
+        .detail {
+          button {
+            background-color: #17a2b8;
+          }
+        }
+
+        .user_fullname {
+          p {
+            width: 135px;
+          }
+        }
+
+        .user_email {
+          p {
+            width: 220px;
+          }
+        }
+
+        .user_tel {
+          p {
+            width: 120px;
+          }
+        }
+
+        .user_pass {
+          p {
+            width: 120px;
+          }
+        }
+
+        .user_type {
+          p {
+            width: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//xét width cho maloainguoidung
+::ng-deep.maloai_nguoidung {
+  width: 10%;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 14px 0;
+}
+
+@media (max-width: 992.62px) {
+  .search_box {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768.62px) {
+  p {
+    font-size: 12px;
+  }
+  .search_box {
+    width: 100%;
+  }
+
+  .table td,
+  .table th {
+    padding: 7px;
+    font-size: 11px;
+  }
+
+  .table_box {
+    .table.table-striped {
+      thead {
+        th {
+          font-size: 12.5px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      .number {
+        p {
+          width: 25px;
+        }
+      }
+
+      .user_account {
+        p {
+          width: 160px;
+        }
+      }
+
+      .detail {
+        button {
+          font-size: 12px;
+          line-height: 30px;
+        }
+      }
+
+      .user_fullname {
+        p {
+          width: 135px;
+        }
+      }
+
+      .user_email {
+        p {
+          width: 200px;
+        }
+      }
+
+      .user_tel {
+        p {
+          width: 120px;
+        }
+      }
+
+      .user_pass {
+        p {
+          width: 120px;
+        }
+      }
+
+      .user_type {
+        p {
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep.active {
+  color: #3f51b5 !important;
+  background-color: unset;
+}
+
+@media (max-width: 576.5px) {
+  .table td,
+  .table th {
+    padding: 7px 6px;
+    font-size: 11px;
+  }
+
+  .table_box {
+    .table.table-striped {
+      thead {
+        th {
+          font-size: 11.5px;
+        }
+      }
+
+      tbody {
+        tr {
+          .detail {
+            button {
+              font-size: 11px;
+              line-height: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450.5px) {
+  ::ng-deep.ngx-pagination.ng-star-inserted {
+    .pagination-previous {
+      display: none;
+    }
+
+    .pagination-next {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 300.52px) {
+  .table td,
+  .table th {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .table_box {
+    .table.table-striped {
+      thead {
+        th {
+          font-size: 10.5px;
+        }
+      }
+    }
+  }
+
+  ::ng-deep.ngx-pagination.ng-star-inserted {
+    font-size: 14px;
+  }
+
+  tbody {
+    tr {
+      .number {
+        p {
+          width: 25px;
+        }
+      }
+
+      .user_account {
+        p {
+          width: 150px;
+        }
+      }
+
+      .user_fullname {
+        p {
+          width: 135px;
+        }
+      }
+
+      .user_email {
+        p {
+          width: 200px;
+        }
+      }
+
+      .user_tel {
+        p {
+          width: 120px;
+        }
+      }
+
+      .user_pass {
+        p {
+          width: 120px;
+        }
+      }
+
+      .user_type {
+        p {
+          width: 80px;
+        }
+      }
+    }
+  }
+}
