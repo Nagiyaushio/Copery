@@ -1,6 +1,11 @@
 <div class="card">
   <div class="content_box">
-    <img class="card-img-top" [src]="khoaHoc.hinhAnh" alt="" />
+    <img
+      class="card-img-top"
+      [src]="khoaHoc.hinhAnh"
+      (error)="updateUrl($event)"
+      alt=""
+    />
 
     <div class="course_title">
       <h4 class="card-title">{{ khoaHoc.tenKhoaHoc }}</h4>

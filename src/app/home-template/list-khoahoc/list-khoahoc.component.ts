@@ -123,6 +123,24 @@ export class ListKhoahocComponent implements OnInit {
       this.spinner.hide();
     }, 2000);
 
+    if (this.width < 992.52 && this.width > 768.52) {
+      this.perpageitemAll = 6;
+
+      this.slideConfig = { slidesToShow: 3, slidesToScroll: 3 };
+    } else if (this.width < 768.52 && this.width > 576.52) {
+      this.perpageitemAll = 4;
+
+      this.slideConfig = { slidesToShow: 2, slidesToScroll: 2 };
+    } else if (this.width < 576.52 && this.width > 0) {
+      this.perpageitemAll = 2;
+
+      this.slideConfig = { slidesToShow: 1, slidesToScroll: 1 };
+    } else {
+      this.perpageitemAll = 8;
+
+      this.slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+    }
+
     this._layDanhSachKhoaHocAll();
 
     this.viewMode = 'tab1';

@@ -131,6 +131,20 @@ export class CourseComponent implements OnInit {
   mangKhoaHocGhiDanh(dskh: any) {
     this.dsKHGhiDanh.push(dskh);
     // console.log(this.dsKHGhiDanh);
+
+    // for (let i = 0; i < this.dsKHGhiDanh.length; i++) {
+    //   this.dsKHGhiDanh[i].hinhAnh = '../assets/images/error-img.png';
+    // }
+  }
+
+  updateUrl(e: any) {
+    // console.log(e);
+
+    for (let i = 0; i < this.dsKHGhiDanh.length; i++) {
+      if (e.type === 'error') {
+        this.dsKHGhiDanh[i].hinhAnh = '../assets/images/error-img.png';
+      }
+    }
   }
 
   order: string = 'info.fulname';
@@ -180,4 +194,7 @@ export class CourseComponent implements OnInit {
       }
     }
   }
+}
+function e(e: any) {
+  throw new Error('Function not implemented.');
 }

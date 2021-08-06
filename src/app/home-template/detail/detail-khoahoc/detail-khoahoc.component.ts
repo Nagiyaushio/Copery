@@ -13,6 +13,12 @@ export class DetailKhoahocComponent implements OnInit {
   @Input() khoaHocNe: any;
   @Output() idOut = new EventEmitter();
 
+  updateUrl(e: any) {
+    if (e.type === 'error') {
+      this.khoaHocNe.hinhAnh = '../assets/images/error-img.png';
+    }
+  }
+
   constructor(
     private shareData: ShareDataService,
     private activatedRoute: ActivatedRoute,

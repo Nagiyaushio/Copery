@@ -53,7 +53,7 @@
           "
         >
           <td class="img">
-            <img [src]="khoaHoc.hinhAnh" alt="" />
+            <img [src]="khoaHoc.hinhAnh" (error)="updateUrl($event)" alt="" />
           </td>
           <td class="info">
             <div class="row">

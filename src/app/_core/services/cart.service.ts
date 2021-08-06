@@ -22,7 +22,7 @@ export class CartService {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
 
-    console.log(this.cartItemList);
+    // console.log(this.cartItemList);
 
     // //thêm vào localstorage
     // localStorage.setItem('Cart', JSON.stringify(this.cartItemList));
@@ -36,6 +36,6 @@ export class CartService {
     });
     this.productList.next(this.cartItemList);
 
-    console.log(this.cartItemList);
+    // console.log(this.cartItemList);
   }
 }

@@ -1,6 +1,11 @@
 <div class="card">
   <div class="image_link">
-    <img class="card-img-top" [src]="khoaHocNe.hinhAnh" alt="" />
+    <img
+      class="card-img-top"
+      [src]="khoaHocNe.hinhAnh"
+      (error)="updateUrl($event)"
+      alt=""
+    />
   </div>
 
   <div class="card_info row">

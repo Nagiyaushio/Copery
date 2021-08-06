@@ -11,6 +11,11 @@ import { ShareDataService } from 'src/app/_core/shares/share-data.service';
 export class KhoaHocComponent implements OnInit {
   @Input() khoaHoc: any;
 
+  updateUrl(e: any) {
+    if (e.type === 'error') {
+      this.khoaHoc.hinhAnh = '../assets/images/error-img.png';
+    }
+  }
   constructor(
     private shareData: ShareDataService,
     private cartService: CartService,

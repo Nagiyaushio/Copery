@@ -1,3 +1,4 @@
+import { TypeComponent } from './../../type/type.component';
 import { CartService } from '@services/cart.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ShareDataService } from 'src/app/_core/shares/share-data.service';
@@ -11,6 +12,12 @@ import { DataService } from '@services/data.service';
 export class FindKhoahocComponent implements OnInit {
   @Input() khoaHoc: any;
   @Output() maKhoaHoc = new EventEmitter();
+
+  updateUrl(e: any) {
+    if (e.type === 'error') {
+      this.khoaHoc.hinhAnh = '../assets/images/error-img.png';
+    }
+  }
   constructor(
     private shareData: ShareDataService,
     private cartService: CartService,
@@ -32,7 +39,7 @@ export class FindKhoahocComponent implements OnInit {
         this.buttonGone = false;
         this.buttonShow = true;
 
-        console.log(2);
+        // console.log(2);
       }
     });
 

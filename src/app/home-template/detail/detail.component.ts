@@ -18,6 +18,12 @@ export class DetailComponent implements OnInit {
 
   id: any = '';
 
+  updateUrl(e: any) {
+    if (e.type === 'error') {
+      this.khoaHoc.hinhAnh = '../assets/images/error-img.png';
+    }
+  }
+
   //nhận lại data idOut
 
   //thêm vào width để gọi, tránh trường hợp load lại trang chạy và chưa resize thì không chạy được
@@ -89,6 +95,16 @@ export class DetailComponent implements OnInit {
     // }
 
     this.idForUsed(this.idTest);
+
+    if (this.width < 992.52 && this.width > 768.52) {
+      this.slideConfig = { slidesToShow: 3, slidesToScroll: 3 };
+    } else if (this.width < 768.52 && this.width > 576.52) {
+      this.slideConfig = { slidesToShow: 2, slidesToScroll: 2 };
+    } else if (this.width < 576.52 && this.width > 0) {
+      this.slideConfig = { slidesToShow: 1, slidesToScroll: 1 };
+    } else {
+      this.slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+    }
   }
 
   idTest: any = '';
