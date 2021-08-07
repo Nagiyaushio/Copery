@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="adminName">
   <p>TỔNG QUAN</p>
   <h1>Thông tin tài khoản</h1>
   <div class="row">
@@ -47,6 +47,7 @@
                   required
                   [(ngModel)]="adminName.taiKhoan"
                   #TaiKhoan="ngModel"
+                  disabled
                 />
                 <mat-error
                   *ngIf="

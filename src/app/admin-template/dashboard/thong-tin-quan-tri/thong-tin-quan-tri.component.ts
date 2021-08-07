@@ -10,34 +10,58 @@ import { DataService } from '@services/data.service';
 export class ThongTinQuanTriComponent implements OnInit {
   hide: boolean = true;
   maLoaiNguoiDung: any;
-  usertype: string[] = ['HV', 'GV'];
+  usertype: string[] = ['GV'];
 
   constructor(private data: DataService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._layThongTinNguoiDung();
+  }
 
   //lấy thông tin trên localStorage
   name: any = localStorage.getItem('UserAdmin');
   //Đổi kiểu string sang object
-  adminName = JSON.parse(this.name);
+  adminNameLocal = JSON.parse(this.name);
 
+  adminName: any;
+  _layThongTinNguoiDung() {
+    let thongTinTK = {
+      taiKhoan: this.adminNameLocal.taiKhoan,
+      matKhau: this.adminNameLocal.matKhau,
+    };
+    this.data
+      .post('QuanLyNguoiDung/ThongTinTaiKhoan', thongTinTK)
+      .subscribe((result) => {
+        this.adminName = result;
+
+        //loại chi tiết khóa học ghi danh
+        delete this.adminName.chiTietKhoaHocGhiDanh;
+        // console.log(this.thongTinTaiKhoan);
+      });
+  }
   editUser(user: any) {
     //thêm mã nhóm vào array
+    user.taiKhoan = this.adminName.taiKhoan;
     user.maNhom = 'GP01';
 
     if (confirm('Bạn có chắc sửa không?')) {
-      console.log(user);
+      // console.log(user);
       this.data
         .put('QuanLyNguoiDung/CapNhatThongTinNguoiDung', user)
         .subscribe((result: any) => {
           console.log(result);
         });
 
+      setTimeout(() => {
+        location.reload();
+      }, 300);
+
+      // this.ngOnInit();
       // xóa localStorage để đăng nhập lại mới cập nhật tt được
-      localStorage.clear();
+      // localStorage.clear();
 
       //Chuyển về trang login
-      this.router.navigate(['/admin/auth']);
+      // this.router.navigate(['/admin/auth']);
     }
   }
 }

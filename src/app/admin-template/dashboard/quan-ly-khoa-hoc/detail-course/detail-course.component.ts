@@ -109,7 +109,7 @@ export class DetailCourseComponent implements OnInit {
       .post('QuanLyNguoiDung/LayDanhSachHocVienKhoaHoc', maLoai)
       .subscribe((result) => {
         this.danhSachHocVienDaGhiDanh = result;
-        console.log(this.danhSachHocVienDaGhiDanh);
+        // console.log(this.danhSachHocVienDaGhiDanh);
       });
   }
 

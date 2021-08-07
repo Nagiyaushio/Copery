@@ -46,7 +46,7 @@ export class ModalComponent implements OnInit {
       //   }
       // });
 
-      console.log(this.khoaHoc);
+      // console.log(this.khoaHoc);
     }
   }
 }

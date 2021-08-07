@@ -24,7 +24,7 @@ export class BangKhoahocComponent implements OnInit {
 
   //gọi API xóa dữ liệu người dùng
   deleteCourse(user: any) {
-    console.log(user);
+    // console.log(user);
     if (confirm('Bạn có chắc xóa không?')) {
       // console.log(user);
       this.data

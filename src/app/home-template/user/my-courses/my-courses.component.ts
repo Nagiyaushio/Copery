@@ -44,12 +44,12 @@ export class MyCoursesComponent implements OnInit {
       .post('QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet', dataUp)
       .subscribe((result) => {
         this.thongTinND = result;
-        console.log(result);
+        // console.log(result);
 
         //lọc mã khóa học
         let maKhoaHocArray = this.thongTinND.map((a: any) => a.maKhoaHoc);
 
-        console.log(maKhoaHocArray);
+        // console.log(maKhoaHocArray);
         for (let i = 0; i < maKhoaHocArray.length; i++) {
           let mangMaKHGD = maKhoaHocArray[i];
 

@@ -72,7 +72,7 @@ export class UserDetailComponent implements OnInit {
       .get(`QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01&tuKhoa=${id}`)
       .subscribe((result) => {
         this.nguoiDung = result;
-        console.log(result);
+        // console.log(result);
       });
   }
 
@@ -104,7 +104,7 @@ export class UserDetailComponent implements OnInit {
       .post('QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet', taiKhoan)
       .subscribe((result) => {
         this.danhSachKhoaHocDaXetDuyet = result;
-        console.log(this.danhSachKhoaHocDaXetDuyet);
+        // console.log(this.danhSachKhoaHocDaXetDuyet);
       });
   }
 

@@ -26,7 +26,7 @@ export class ThemNguoidungComponent implements OnInit {
       this.data
         .post('QuanLyNguoiDung/ThemNguoiDung', user)
         .subscribe((result: any) => {
-          console.log(result);
+          // console.log(result);
         });
       // console.log(user);
 

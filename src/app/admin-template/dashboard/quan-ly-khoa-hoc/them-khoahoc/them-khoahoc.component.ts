@@ -70,7 +70,7 @@ export class ThemKhoahocComponent implements OnInit {
     // this.ngayTao =
     //   this.ngay.date + '/' + this.ngay.month + '/' + this.ngay.year;
 
-    console.log(this.ngayTao);
+    // console.log(this.ngayTao);
     //thêm mã nhóm vào array
     user.maNhom = 'GP01';
 
@@ -84,7 +84,7 @@ export class ThemKhoahocComponent implements OnInit {
     // user.ngayTao = String(this.ngayTao);
     user.ngayTao = '10/08/2021';
 
-    console.log(user);
+    // console.log(user);
 
     // append array
     var form_data = new FormData();
@@ -92,12 +92,12 @@ export class ThemKhoahocComponent implements OnInit {
       form_data.append(key, user[key]);
     }
 
-    console.log(form_data);
+    // console.log(form_data);
     if (confirm('Thêm khóa học ?')) {
       this.data
         .post('QuanLyKhoaHoc/ThemKhoaHocUploadHinh', form_data)
         .subscribe((result) => {
-          console.log(result);
+          // console.log(result);
         });
 
       this.chuyenTrang = false;
@@ -111,7 +111,7 @@ export class ThemKhoahocComponent implements OnInit {
     this.data
       .get('QuanLyKhoaHoc/LayDanhMucKhoaHoc')
       .subscribe((result: any) => {
-        console.log(result);
+        // console.log(result);
         this.dsmkh = result;
       });
   }
